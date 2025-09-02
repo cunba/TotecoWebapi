@@ -1,9 +1,22 @@
 using TotecoApi.Data;
 using Microsoft.EntityFrameworkCore;
+using TotecoApi.Repositories;
+using TotecoApi.Models;
+using TotecoApi.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+
+builder.Services.AddScoped<IGenericRepository<Establishment>, GenericRepository<Establishment>>();
+builder.Services.AddScoped<IGenericRepository<Product>, GenericRepository<Product>>();
+builder.Services.AddScoped<IGenericRepository<Publication>, GenericRepository<Publication>>();
+builder.Services.AddScoped<IGenericRepository<User>, GenericRepository<User>>();
+
+builder.Services.AddScoped<IGenericService<Establishment>, GenericService<Establishment>>();
+builder.Services.AddScoped<IGenericService<Product>, GenericService<Product>>();
+builder.Services.AddScoped<IGenericService<Publication>, GenericService<Publication>>();
+builder.Services.AddScoped<IGenericService<User>, GenericService<User>>();
 
 builder.Services.AddControllers()
     .AddJsonOptions(options =>
