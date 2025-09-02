@@ -1,29 +1,32 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
-namespace TotecoApi.Models;
-
-[Table("Establishments")]
-public class Establishment
+namespace Models
 {
-    [Key]
-    [Column("id")]
-    public int Id { get; set; }
+    [Table("Establishments")]
+    public class Establishment
+    {
+        [Key]
+        [Column("id")]
+        public int Id { get; set; }
 
-    [Column("name")]
-    public string Name { get; set; } = string.Empty;
+        [Column("name")]
+        public string Name { get; set; } = string.Empty;
 
-    [Column("creation_date")]
-    public DateTime CreationDate { get; set; } = DateTime.UtcNow;
+        [Column("creation_date")]
+        public DateTime CreationDate { get; set; } = DateTime.UtcNow;
 
-    [Column("location")]
-    public string? Location { get; set; }
+        [Column("location")]
+        public string? Location { get; set; }
 
-    [Column("is_open")]
-    public bool IsOpen { get; set; }
+        [Column("is_open")]
+        public bool IsOpen { get; set; }
 
-    [Column("score")]
-    public double Score { get; set; }
+        [Column("score")]
+        public double Score { get; set; }
 
-    public List<Publication> Publications { get; set; } = new();
+        [JsonIgnore]
+        public List<Publication> Publications { get; set; } = new();
+    }
 }

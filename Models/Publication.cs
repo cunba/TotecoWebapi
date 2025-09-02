@@ -1,34 +1,38 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
-namespace TotecoApi.Models;
-
-[Table("Publications")]
-public class Publication
+namespace Models
 {
-    [Key]
-    [Column("id")]
-    public int Id { get; set; }
+    [Table("Publications")]
+    public class Publication
+    {
+        [Key]
+        [Column("id")]
+        public int Id { get; set; }
 
-    [Column("date")]
-    public DateTime Date { get; set; }
+        [Column("date")]
+        public DateTime Date { get; set; }
 
-    [Column("total_price")]
-    public decimal TotalPrice { get; set; }
+        [Column("total_price")]
+        public decimal TotalPrice { get; set; }
 
-    [Column("total_score")]
-    public double TotalScore { get; set; }
+        [Column("total_score")]
+        public double TotalScore { get; set; }
 
-    [Column("photo")]
-    public string? Photo { get; set; }
+        [Column("photo")]
+        public string? Photo { get; set; }
 
-    [Column("user_id")]
-    public int UserId { get; set; }
-    public User? User { get; set; }
+        [Column("user_id")]
+        public int UserId { get; set; }
 
-    [Column("establishment_id")]
-    public int EstablishmentId { get; set; }
-    public Establishment? Establishment { get; set; }
+        [JsonIgnore]
+        public User? User { get; set; }
 
-    public List<Product> Products { get; set; } = new();
+        [Column("establishment_id")]
+        public int EstablishmentId { get; set; }
+        public Establishment? Establishment { get; set; }
+
+        public List<Product> Products { get; set; } = new();
+    }
 }
