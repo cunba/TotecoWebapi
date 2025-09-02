@@ -18,7 +18,7 @@ namespace TotecoApi.Models
         public decimal TotalPrice { get; set; }
 
         [Column("total_score")]
-        public double TotalScore { get; set; }
+        public decimal TotalScore { get; set; }
 
         [Column("photo")]
         public string? Photo { get; set; }

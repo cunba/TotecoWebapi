@@ -79,8 +79,8 @@ namespace TotecoApi.Controllers
             return Ok(est);
         }
 
-        [HttpGet("/score")]
-        public async Task<ActionResult<List<Establishment>>> GetByScore([FromQuery] decimal minScore, [FromQuery] decimal maxScore)
+        [HttpGet("/score-range")]
+        public async Task<ActionResult<List<Establishment>>> GetByScoreRange([FromQuery] decimal minScore, [FromQuery] decimal maxScore)
         {
             var est = await _service.FindAsync(e => e.Score >= minScore && e.Score <= maxScore);
             return Ok(est);
