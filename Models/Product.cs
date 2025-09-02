@@ -1,16 +1,28 @@
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace TotecoApi.Models;
 
+[Table("Products")]
 public class Product
 {
+    [Key]
+    [Column("id")]
     public int Id { get; set; }
-    public string Name { get; set; } = "";
-    public DateTime CreatedDate { get; set; } = DateTime.UtcNow;
+
+    [Column("name")]
+    public string Name { get; set; } = string.Empty;
+
+    [Column("date")]
+    public DateTime Date { get; set; }
+
+    [Column("price")]
     public decimal Price { get; set; }
-    public double Rating { get; set; }
 
-    public int TypeId { get; set; }
-    public ProductType? Type { get; set; }
+    [Column("score")]
+    public double Score { get; set; }
 
+    [Column("publication_id")]
     public int? PublicationId { get; set; }
     public Publication? Publication { get; set; }
 }
