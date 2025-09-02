@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
-using Models;
+using TotecoApi.Models;
 
-namespace Data;
+namespace TotecoApi.Data;
 
 public class AppDbContext : DbContext
 {
