@@ -57,5 +57,33 @@ namespace TotecoApi.Controllers
             await _service.DeleteAsync(id);
             return NoContent();
         }
+
+        [HttpGet("/name/{name}")]
+        public async Task<ActionResult<List<Establishment>>> GetByName(string name)
+        {
+            var est = await _service.FindAsync(e => e.Name == name);
+            return Ok(est);
+        }
+
+        [HttpGet("/open/{open}")]
+        public async Task<ActionResult<List<Establishment>>> GetByOpen(bool open)
+        {
+            var est = await _service.FindAsync(e => e.IsOpen == open);
+            return Ok(est);
+        }
+
+        [HttpGet("/score/{score}")]
+        public async Task<ActionResult<List<Establishment>>> GetByScore(decimal score)
+        {
+            var est = await _service.FindAsync(e => e.Score >= score);
+            return Ok(est);
+        }
+
+        [HttpGet("/score")]
+        public async Task<ActionResult<List<Establishment>>> GetByScore([FromQuery] decimal minScore, [FromQuery] decimal maxScore)
+        {
+            var est = await _service.FindAsync(e => e.Score >= minScore && e.Score <= maxScore);
+            return Ok(est);
+        }
     }
 }

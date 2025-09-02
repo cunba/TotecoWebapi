@@ -55,5 +55,33 @@ namespace TotecoApi.Controllers
             await _service.DeleteAsync(id);
             return NoContent();
         }
+
+        [HttpGet("/user/{id}")]
+        public async Task<ActionResult<List<Publication>>> GetByUser(int id)
+        {
+            var est = await _service.FindAsync(p => p.UserId == id);
+            return Ok(est);
+        }
+
+        [HttpGet("/establishment/{id}")]
+        public async Task<ActionResult<List<Publication>>> GetByEstablishment(int id)
+        {
+            var est = await _service.FindAsync(p => p.EstablishmentId == id);
+            return Ok(est);
+        }
+
+        [HttpGet("/score")]
+        public async Task<ActionResult<List<Publication>>> GetByScoreRange([FromQuery] double minScore, [FromQuery] double maxScore)
+        {
+            var est = await _service.FindAsync(p => p.TotalScore >= minScore && p.TotalScore <= maxScore);
+            return Ok(est);
+        }
+
+        [HttpGet("/price")]
+        public async Task<ActionResult<List<Publication>>> GetByPriceRange([FromQuery] decimal minPrice, [FromQuery] decimal maxPrice)
+        {
+            var est = await _service.FindAsync(p => p.TotalPrice >= minPrice && p.TotalPrice <= maxPrice);
+            return Ok(est);
+        }
     }
 }

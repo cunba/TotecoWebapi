@@ -24,7 +24,7 @@ namespace TotecoApi.Models
         public bool IsOpen { get; set; }
 
         [Column("score")]
-        public double Score { get; set; }
+        public decimal Score { get; set; }
 
         [JsonIgnore]
         public List<Publication> Publications { get; set; } = new();
