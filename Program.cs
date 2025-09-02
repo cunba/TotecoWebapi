@@ -1,4 +1,4 @@
-using Data;
+using TotecoApi.Data;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
