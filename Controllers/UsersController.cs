@@ -1,6 +1,4 @@
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using TotecoApi.Data;
 using TotecoApi.Models;
 using TotecoApi.Services;
 
@@ -15,34 +13,34 @@ namespace TotecoApi.Controllers
         [HttpGet]
         public async Task<ActionResult<List<User>>> GetAll()
         {
-            var est = await _service.GetAllAsync();
-            return Ok(est);
+            var user = await _service.GetAllAsync();
+            return Ok(user);
         }
 
         [HttpGet("{id}")]
         public async Task<ActionResult<User>> GetById(int id)
         {
-            var est = await _service.GetByIdAsync(id);
-            if (est == null) return NotFound();
-            return Ok(est);
+            var user = await _service.GetByIdAsync(id);
+            if (user == null) return NotFound();
+            return Ok(user);
         }
 
         [HttpPost]
-        public async Task<ActionResult<User>> Create(User est)
+        public async Task<ActionResult<User>> Create(User user)
         {
-            await _service.CreateAsync(est);
-            return CreatedAtAction(nameof(GetById), new { id = est.Id }, est);
+            await _service.CreateAsync(user);
+            return CreatedAtAction(nameof(GetById), new { id = user.Id }, user);
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> Update(int id, User est)
+        public async Task<IActionResult> Update(int id, User user)
         {
-            if (id != est.Id) return BadRequest();
+            if (id != user.Id) return BadRequest();
 
             var exist = await _service.GetByIdAsync(id);
             if (exist == null) return NotFound();
 
-            await _service.UpdateAsync(id, est);
+            await _service.UpdateAsync(id, user);
             return NoContent();
         }
 

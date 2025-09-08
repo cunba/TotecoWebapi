@@ -1,6 +1,4 @@
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using TotecoApi.Data;
 using TotecoApi.Models;
 using TotecoApi.Services;
 
@@ -15,34 +13,34 @@ namespace TotecoApi.Controllers
         [HttpGet]
         public async Task<ActionResult<List<Publication>>> GetAll()
         {
-            var est = await _service.GetAllAsync();
-            return Ok(est);
+            var pub = await _service.GetAllAsync();
+            return Ok(pub);
         }
 
         [HttpGet("{id}")]
         public async Task<ActionResult<Publication>> GetById(int id)
         {
-            var est = await _service.GetByIdAsync(id);
-            if (est == null) return NotFound();
-            return Ok(est);
+            var pub = await _service.GetByIdAsync(id);
+            if (pub == null) return NotFound();
+            return Ok(pub);
         }
 
         [HttpPost]
-        public async Task<ActionResult<Publication>> Create(Publication est)
+        public async Task<ActionResult<Publication>> Create(Publication pub)
         {
-            await _service.CreateAsync(est);
-            return CreatedAtAction(nameof(GetById), new { id = est.Id }, est);
+            await _service.CreateAsync(pub);
+            return CreatedAtAction(nameof(GetById), new { id = pub.Id }, pub);
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> Update(int id, Publication est)
+        public async Task<IActionResult> Update(int id, Publication pub)
         {
-            if (id != est.Id) return BadRequest();
+            if (id != pub.Id) return BadRequest();
 
             var exist = await _service.GetByIdAsync(id);
             if (exist == null) return NotFound();
 
-            await _service.UpdateAsync(id, est);
+            await _service.UpdateAsync(id, pub);
             return NoContent();
         }
 
@@ -59,29 +57,29 @@ namespace TotecoApi.Controllers
         [HttpGet("/user/{id}")]
         public async Task<ActionResult<List<Publication>>> GetByUser(int id)
         {
-            var est = await _service.FindAsync(p => p.UserId == id);
-            return Ok(est);
+            var pub = await _service.FindAsync(p => p.UserId == id);
+            return Ok(pub);
         }
 
         [HttpGet("/establishment/{id}")]
         public async Task<ActionResult<List<Publication>>> GetByEstablishment(int id)
         {
-            var est = await _service.FindAsync(p => p.EstablishmentId == id);
-            return Ok(est);
+            var pub = await _service.FindAsync(p => p.EstablishmentId == id);
+            return Ok(pub);
         }
 
         [HttpGet("/score")]
         public async Task<ActionResult<List<Publication>>> GetByScoreRange([FromQuery] decimal minScore, [FromQuery] decimal maxScore)
         {
-            var est = await _service.FindAsync(p => p.TotalScore >= minScore && p.TotalScore <= maxScore);
-            return Ok(est);
+            var pub = await _service.FindAsync(p => p.TotalScore >= minScore && p.TotalScore <= maxScore);
+            return Ok(pub);
         }
 
         [HttpGet("/price")]
         public async Task<ActionResult<List<Publication>>> GetByPriceRange([FromQuery] decimal minPrice, [FromQuery] decimal maxPrice)
         {
-            var est = await _service.FindAsync(p => p.TotalPrice >= minPrice && p.TotalPrice <= maxPrice);
-            return Ok(est);
+            var pub = await _service.FindAsync(p => p.TotalPrice >= minPrice && p.TotalPrice <= maxPrice);
+            return Ok(pub);
         }
     }
 }
