@@ -31,7 +31,7 @@ CREATE TABLE `establishments` (
   `id` int(11) NOT NULL,
   `name` varchar(30) NOT NULL,
   `creation_date` date NOT NULL,
-  `location` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL CHECK (json_valid(`location`)),
+  `location` varchar(200),
   `is_open` tinyint(1) NOT NULL,
   `score` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -134,9 +134,9 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `name`, `surname`, `birth_date`, `email`, `password`, `creation_date`, `active`, `money_spent`, `publications_number`, `role`) VALUES
-(5, 'martabags', 'Marta', 'Bagüés', '1997-06-18', 'martabags@gmail.com', '$2a$10$pThnLtTGDTc5y72AD7Nm9.ppqDZNXBajpekjUBpYBjl5bTCGMiHCu', '2022-04-17', 1, 0, 0, 'USER'),
-(6, 'admin', 'admin', 'admin', '1997-06-18', 'admin', '$2a$10$2ZIh3vyn/VtbenhBAqqTy.oZ1pTEPVL9Kom7ziwOqmXGmIUiqUh9W', '2022-04-20', 1, 0, 0, 'ADMIN'),
-(8, 'cunba', 'Irene', 'Cunto', '1995-09-05', 'ire.cunba@gmail.com', '$2a$10$u1WxYGTA5ItdZa7l6oywtuAutpz7MN.ChvdHowR1CEyiKeyHdJhOC', '2022-04-26', 1, 0, 0, 'USER');
+(5, 'martabags', 'Marta', 'Bagüés', '1997-06-18', 'martabags@gmail.com', 'martabags', '2022-04-17', 1, 0, 0, 'USER'),
+(6, 'admin', 'admin', 'admin', '1997-06-18', 'admin', 'admin', '2022-04-20', 1, 0, 0, 'ADMIN'),
+(8, 'cunba', 'Irene', 'Cunto', '1995-09-05', 'ire.cunba@gmail.com', 'cunba', '2022-04-26', 1, 0, 0, 'USER');
 
 --
 -- Índices para tablas volcadas

@@ -12,7 +12,7 @@ namespace TotecoApi.Controllers
         private readonly IGenericService<User> _service = service;
 
         [HttpGet]
-        [Authorize(Roles = "admin")]
+        [Authorize(Roles = "ADMIN")]
         public async Task<ActionResult<List<User>>> GetAll()
         {
             var user = await _service.GetAllAsync();

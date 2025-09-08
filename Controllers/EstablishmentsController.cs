@@ -28,15 +28,15 @@ namespace TotecoApi.Controllers
         }
 
         [HttpPost]
-        [Authorize(Roles = "admin")]
+        [Authorize(Roles = "ADMIN")]
         public async Task<ActionResult<Establishment>> Create(Establishment est)
         {
             await _service.CreateAsync(est);
-            return CreatedAtAction(nameof(GetById), new { id = est.Id }, est);
+            return Ok(est);
         }
 
         [HttpPut("{id}")]
-        [Authorize(Roles = "admin")]
+        [Authorize(Roles = "ADMIN")]
         public async Task<IActionResult> Update(int id, Establishment est)
         {
             if (id != est.Id) return BadRequest();
@@ -49,7 +49,7 @@ namespace TotecoApi.Controllers
         }
 
         [HttpDelete("{id}")]
-        [Authorize(Roles = "admin")]
+        [Authorize(Roles = "ADMIN")]
         public async Task<IActionResult> Delete(int id)
         {
             var exist = await _service.GetByIdAsync(id);
