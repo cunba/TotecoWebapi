@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using TotecoApi.Models;
 using TotecoApi.Services;
@@ -11,6 +12,7 @@ namespace TotecoApi.Controllers
         private readonly IGenericService<User> _service = service;
 
         [HttpGet]
+        [Authorize(Roles = "admin")]
         public async Task<ActionResult<List<User>>> GetAll()
         {
             var user = await _service.GetAllAsync();
@@ -33,6 +35,7 @@ namespace TotecoApi.Controllers
         }
 
         [HttpPut("{id}")]
+        [Authorize]
         public async Task<IActionResult> Update(int id, User user)
         {
             if (id != user.Id) return BadRequest();
@@ -45,6 +48,7 @@ namespace TotecoApi.Controllers
         }
 
         [HttpDelete("{id}")]
+        [Authorize]
         public async Task<IActionResult> Delete(int id)
         {
             var exist = await _service.GetByIdAsync(id);

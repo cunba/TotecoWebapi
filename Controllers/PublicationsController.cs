@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using TotecoApi.Models;
 using TotecoApi.Services;
@@ -26,6 +27,7 @@ namespace TotecoApi.Controllers
         }
 
         [HttpPost]
+        [Authorize]
         public async Task<ActionResult<Publication>> Create(Publication pub)
         {
             await _service.CreateAsync(pub);
@@ -33,6 +35,7 @@ namespace TotecoApi.Controllers
         }
 
         [HttpPut("{id}")]
+        [Authorize]
         public async Task<IActionResult> Update(int id, Publication pub)
         {
             if (id != pub.Id) return BadRequest();
@@ -45,6 +48,7 @@ namespace TotecoApi.Controllers
         }
 
         [HttpDelete("{id}")]
+        [Authorize]
         public async Task<IActionResult> Delete(int id)
         {
             var exist = await _service.GetByIdAsync(id);

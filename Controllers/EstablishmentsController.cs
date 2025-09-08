@@ -1,8 +1,6 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using TotecoApi.Data;
 using TotecoApi.Models;
-using TotecoApi.Repositories;
 using TotecoApi.Services;
 
 namespace TotecoApi.Controllers
@@ -30,6 +28,7 @@ namespace TotecoApi.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "admin")]
         public async Task<ActionResult<Establishment>> Create(Establishment est)
         {
             await _service.CreateAsync(est);
@@ -37,6 +36,7 @@ namespace TotecoApi.Controllers
         }
 
         [HttpPut("{id}")]
+        [Authorize(Roles = "admin")]
         public async Task<IActionResult> Update(int id, Establishment est)
         {
             if (id != est.Id) return BadRequest();
@@ -49,6 +49,7 @@ namespace TotecoApi.Controllers
         }
 
         [HttpDelete("{id}")]
+        [Authorize(Roles = "admin")]
         public async Task<IActionResult> Delete(int id)
         {
             var exist = await _service.GetByIdAsync(id);
