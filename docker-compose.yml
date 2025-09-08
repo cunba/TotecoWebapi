@@ -24,6 +24,7 @@ services:
       MYSQL_DATABASE: TotecoDb
     volumes:
       - db_data:/var/lib/mysql
+      - ./db/toteco.sql:/docker-entrypoint-initdb.d/toteco.sql
     networks:
       - toteco_net
 

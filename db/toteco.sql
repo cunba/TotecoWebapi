@@ -27,7 +27,7 @@ SET time_zone = "+00:00";
 -- Estructura de tabla para la tabla `establishments`
 --
 
-CREATE TABLE `establishments` (
+CREATE TABLE `Establishments` (
   `id` int(11) NOT NULL,
   `name` varchar(30) NOT NULL,
   `creation_date` date NOT NULL,
@@ -40,7 +40,7 @@ CREATE TABLE `establishments` (
 -- Volcado de datos para la tabla `establishments`
 --
 
-INSERT INTO `establishments` (`id`, `name`, `creation_date`, `location`, `is_open`, `score`) VALUES
+INSERT INTO `Establishments` (`id`, `name`, `creation_date`, `location`, `is_open`, `score`) VALUES
 (1, 'Criollo', '2022-04-17', '{\"latitude\": 0.0, \"longitude\": 0.0}', 1, 0),
 (6, 'Doña hipólita', '2022-04-20', '{\"latitude\":2.0,\"longitude\":3.0}', 1, 0),
 (16, 'Mondo', '2022-04-20', '{\"latitude\":41.653664,\"longitude\":-0.88433594}', 1, 0);
@@ -48,27 +48,10 @@ INSERT INTO `establishments` (`id`, `name`, `creation_date`, `location`, `is_ope
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `hibernate_sequence`
---
-
-CREATE TABLE `hibernate_sequence` (
-  `next_val` bigint(20) DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
-
---
--- Volcado de datos para la tabla `hibernate_sequence`
---
-
-INSERT INTO `hibernate_sequence` (`next_val`) VALUES
-(4);
-
--- --------------------------------------------------------
-
---
 -- Estructura de tabla para la tabla `products`
 --
 
-CREATE TABLE `products` (
+CREATE TABLE `Products` (
   `id` int(11) NOT NULL,
   `name` varchar(30) NOT NULL,
   `date` date NOT NULL,
@@ -81,7 +64,7 @@ CREATE TABLE `products` (
 -- Volcado de datos para la tabla `products`
 --
 
-INSERT INTO `products` (`id`, `name`, `date`, `price`, `score`, `publication_id`) VALUES
+INSERT INTO `Products` (`id`, `name`, `date`, `price`, `score`, `publication_id`) VALUES
 (1, 'Tostada con tomate', '2022-04-26', 2, 5, 1),
 (2, 'Matcha con leche de avena', '2022-04-26', 1, 2, 1);
 
@@ -91,7 +74,7 @@ INSERT INTO `products` (`id`, `name`, `date`, `price`, `score`, `publication_id`
 -- Estructura de tabla para la tabla `publications`
 --
 
-CREATE TABLE `publications` (
+CREATE TABLE `Publications` (
   `id` int(11) NOT NULL,
   `date` date NOT NULL,
   `total_price` float NOT NULL,
@@ -105,7 +88,7 @@ CREATE TABLE `publications` (
 -- Volcado de datos para la tabla `publications`
 --
 
-INSERT INTO `publications` (`id`, `date`, `total_price`, `total_score`, `photo`, `establishment_id`, `user_id`) VALUES
+INSERT INTO `Publications` (`id`, `date`, `total_price`, `total_score`, `photo`, `establishment_id`, `user_id`) VALUES
 (1, '2022-04-26', 0, 0, 'string.jpg', 1, 8);
 
 -- --------------------------------------------------------
@@ -114,7 +97,7 @@ INSERT INTO `publications` (`id`, `date`, `total_price`, `total_score`, `photo`,
 -- Estructura de tabla para la tabla `users`
 --
 
-CREATE TABLE `users` (
+CREATE TABLE `Users` (
   `id` int(11) NOT NULL,
   `username` varchar(50) NOT NULL,
   `name` varchar(30) DEFAULT NULL,
@@ -133,7 +116,7 @@ CREATE TABLE `users` (
 -- Volcado de datos para la tabla `users`
 --
 
-INSERT INTO `users` (`id`, `username`, `name`, `surname`, `birth_date`, `email`, `password`, `creation_date`, `active`, `money_spent`, `publications_number`, `role`) VALUES
+INSERT INTO `Users` (`id`, `username`, `name`, `surname`, `birth_date`, `email`, `password`, `creation_date`, `active`, `money_spent`, `publications_number`, `role`) VALUES
 (5, 'martabags', 'Marta', 'Bagüés', '1997-06-18', 'martabags@gmail.com', 'martabags', '2022-04-17', 1, 0, 0, 'USER'),
 (6, 'admin', 'admin', 'admin', '1997-06-18', 'admin', 'admin', '2022-04-20', 1, 0, 0, 'ADMIN'),
 (8, 'cunba', 'Irene', 'Cunto', '1995-09-05', 'ire.cunba@gmail.com', 'cunba', '2022-04-26', 1, 0, 0, 'USER');
@@ -145,28 +128,28 @@ INSERT INTO `users` (`id`, `username`, `name`, `surname`, `birth_date`, `email`,
 --
 -- Indices de la tabla `establishments`
 --
-ALTER TABLE `establishments`
+ALTER TABLE `Establishments`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `products`
+-- Indices de la tabla `Products`
 --
-ALTER TABLE `products`
+ALTER TABLE `Products`
   ADD PRIMARY KEY (`id`),
   ADD KEY `fk_publication_id` (`publication_id`);
 
 --
--- Indices de la tabla `publications`
+-- Indices de la tabla `Publications`
 --
-ALTER TABLE `publications`
+ALTER TABLE `Publications`
   ADD PRIMARY KEY (`id`),
   ADD KEY `fk_establishment_id` (`establishment_id`),
   ADD KEY `fk_user_id` (`user_id`);
 
 --
--- Indices de la tabla `users`
+-- Indices de la tabla `Users`
 --
-ALTER TABLE `users`
+ALTER TABLE `Users`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -176,25 +159,25 @@ ALTER TABLE `users`
 --
 -- AUTO_INCREMENT de la tabla `establishments`
 --
-ALTER TABLE `establishments`
+ALTER TABLE `Establishments`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
--- AUTO_INCREMENT de la tabla `products`
+-- AUTO_INCREMENT de la tabla `Products`
 --
-ALTER TABLE `products`
+ALTER TABLE `Products`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT de la tabla `publications`
+-- AUTO_INCREMENT de la tabla `Publications`
 --
-ALTER TABLE `publications`
+ALTER TABLE `Publications`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT de la tabla `users`
+-- AUTO_INCREMENT de la tabla `Users`
 --
-ALTER TABLE `users`
+ALTER TABLE `Users`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
@@ -202,17 +185,17 @@ ALTER TABLE `users`
 --
 
 --
--- Filtros para la tabla `products`
+-- Filtros para la tabla `Products`
 --
-ALTER TABLE `products`
-  ADD CONSTRAINT `fk_publication_id` FOREIGN KEY (`publication_id`) REFERENCES `publications` (`id`);
+ALTER TABLE `Products`
+  ADD CONSTRAINT `fk_publication_id` FOREIGN KEY (`publication_id`) REFERENCES `Publications` (`id`);
 
 --
--- Filtros para la tabla `publications`
+-- Filtros para la tabla `Publications`
 --
-ALTER TABLE `publications`
-  ADD CONSTRAINT `fk_establishment_id` FOREIGN KEY (`establishment_id`) REFERENCES `establishments` (`id`),
-  ADD CONSTRAINT `fk_user_id` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
+ALTER TABLE `Publications`
+  ADD CONSTRAINT `fk_establishment_id` FOREIGN KEY (`establishment_id`) REFERENCES `Establishments` (`id`),
+  ADD CONSTRAINT `fk_user_id` FOREIGN KEY (`user_id`) REFERENCES `Users` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
