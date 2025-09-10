@@ -1,26 +1,50 @@
 {
 	"info": {
-		"_postman_id": "4c0bc0af-4022-4156-84bc-5d2b1e14e1c1",
-		"name": "toteco",
+		"_postman_id": "48d10b64-8610-4208-92fd-d92602a6482c",
+		"name": "toteco-postman",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "15363222",
-		"_collection_link": "https://toteco.postman.co/workspace/0b3a84cf-f5b0-450f-b5ab-e711d41b18fe/collection/15363222-4c0bc0af-4022-4156-84bc-5d2b1e14e1c1?action=share&source=collection_link&creator=15363222"
+		"_collection_link": "https://toteco.postman.co/workspace/0b3a84cf-f5b0-450f-b5ab-e711d41b18fe/collection/15363222-48d10b64-8610-4208-92fd-d92602a6482c?action=share&source=collection_link&creator=15363222"
 	},
 	"item": [
 		{
-			"name": "api",
+			"name": "Establishments",
 			"item": [
 				{
-					"name": "Establishments",
-					"item": [
+					"name": "/api/Establishments",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/Establishments",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"Establishments"
+							]
+						}
+					},
+					"response": [
 						{
-							"name": "/api/Establishments",
-							"request": {
+							"name": "OK",
+							"originalRequest": {
 								"method": "GET",
 								"header": [
 									{
 										"key": "Accept",
-										"value": "text/plain"
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer <token>",
+										"description": "Added as a part of security scheme: bearer"
 									}
 								],
 								"url": {
@@ -34,50 +58,97 @@
 									]
 								}
 							},
-							"response": [
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
 								{
-									"name": "OK",
-									"originalRequest": {
-										"method": "GET",
-										"header": [
-											{
-												"key": "Accept",
-												"value": "text/plain"
-											},
-											{
-												"key": "Authorization",
-												"value": "Bearer <token>",
-												"description": "Added as a part of security scheme: bearer"
-											}
-										],
-										"url": {
-											"raw": "{{baseUrl}}/api/Establishments",
-											"host": [
-												"{{baseUrl}}"
-											],
-											"path": [
-												"api",
-												"Establishments"
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Content-Type",
-											"value": "application/json"
-										}
-									],
-									"cookie": [],
-									"body": "[\n  {\n    \"id\": 5742,\n    \"name\": \"string\",\n    \"creationDate\": \"1996-11-14T06:42:49.029Z\",\n    \"location\": \"string\",\n    \"isOpen\": true,\n    \"score\": 6391.795478790333\n  },\n  {\n    \"id\": 3087,\n    \"name\": \"string\",\n    \"creationDate\": \"2002-02-25T04:16:42.070Z\",\n    \"location\": \"string\",\n    \"isOpen\": true,\n    \"score\": 1623.866952203361\n  }\n]"
+									"key": "Content-Type",
+									"value": "application/json"
 								}
-							]
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"creationDate\": \"1952-04-23T06:08:50.753Z\",\n    \"location\": \"string\",\n    \"isOpen\": true,\n    \"score\": 9550.718245428741\n  },\n  {\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"creationDate\": \"2011-02-16T12:26:49.939Z\",\n    \"location\": \"string\",\n    \"isOpen\": false,\n    \"score\": 1248.743985952061\n  }\n]"
 						},
 						{
-							"name": "/api/Establishments",
-							"request": {
+							"name": "Internal Server Error",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer <token>",
+										"description": "Added as a part of security scheme: bearer"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/Establishments",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Establishments"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"message\": \"string\"\n}"
+						}
+					]
+				},
+				{
+					"name": "/api/Establishments",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"creationDate\": \"1962-09-17T15:00:24.509Z\",\n  \"location\": \"string\",\n  \"isOpen\": false,\n  \"score\": 5494.453033642321\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/Establishments",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"Establishments"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Created",
+							"originalRequest": {
 								"method": "POST",
 								"header": [
 									{
@@ -86,12 +157,17 @@
 									},
 									{
 										"key": "Accept",
-										"value": "text/plain"
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer <token>",
+										"description": "Added as a part of security scheme: bearer"
 									}
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"id\": 2738,\n  \"name\": \"string\",\n  \"creationDate\": \"2003-01-11T08:40:43.950Z\",\n  \"location\": \"string\",\n  \"isOpen\": true,\n  \"score\": 5379.34354131905\n}",
+									"raw": "{\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"creationDate\": \"1962-09-17T15:00:24.509Z\",\n  \"location\": \"string\",\n  \"isOpen\": false,\n  \"score\": 5494.453033642321\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -110,69 +186,115 @@
 									]
 								}
 							},
-							"response": [
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
 								{
-									"name": "OK",
-									"originalRequest": {
-										"method": "POST",
-										"header": [
-											{
-												"key": "Content-Type",
-												"value": "application/json"
-											},
-											{
-												"key": "Accept",
-												"value": "text/plain"
-											},
-											{
-												"key": "Authorization",
-												"value": "Bearer <token>",
-												"description": "Added as a part of security scheme: bearer"
-											}
-										],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n  \"id\": 2738,\n  \"name\": \"string\",\n  \"creationDate\": \"2003-01-11T08:40:43.950Z\",\n  \"location\": \"string\",\n  \"isOpen\": true,\n  \"score\": 5379.34354131905\n}",
-											"options": {
-												"raw": {
-													"headerFamily": "json",
-													"language": "json"
-												}
-											}
-										},
-										"url": {
-											"raw": "{{baseUrl}}/api/Establishments",
-											"host": [
-												"{{baseUrl}}"
-											],
-											"path": [
-												"api",
-												"Establishments"
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Content-Type",
-											"value": "application/json"
-										}
-									],
-									"cookie": [],
-									"body": "{\n  \"id\": 2738,\n  \"name\": \"string\",\n  \"creationDate\": \"2003-01-11T08:40:43.950Z\",\n  \"location\": \"string\",\n  \"isOpen\": true,\n  \"score\": 5379.34354131905\n}"
+									"key": "Content-Type",
+									"value": "application/json"
 								}
-							]
+							],
+							"cookie": [],
+							"body": "{\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"creationDate\": \"1962-09-17T15:00:24.509Z\",\n  \"location\": \"string\",\n  \"isOpen\": false,\n  \"score\": 5494.453033642321\n}"
 						},
 						{
-							"name": "/api/Establishments/:id",
-							"request": {
+							"name": "Internal Server Error",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer <token>",
+										"description": "Added as a part of security scheme: bearer"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"creationDate\": \"1962-09-17T15:00:24.509Z\",\n  \"location\": \"string\",\n  \"isOpen\": false,\n  \"score\": 5494.453033642321\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/Establishments",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Establishments"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"message\": \"string\"\n}"
+						}
+					]
+				},
+				{
+					"name": "/api/Establishments/:id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/Establishments/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"Establishments",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "string",
+									"description": "(Required) "
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
 								"method": "GET",
 								"header": [
 									{
 										"key": "Accept",
-										"value": "text/plain"
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer <token>",
+										"description": "Added as a part of security scheme: bearer"
 									}
 								],
 								"url": {
@@ -187,73 +309,175 @@
 									],
 									"variable": [
 										{
-											"key": "id",
-											"value": "9978",
-											"description": "(Required) "
+											"key": "id"
 										}
 									]
 								}
 							},
-							"response": [
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
 								{
-									"name": "OK",
-									"originalRequest": {
-										"method": "GET",
-										"header": [
-											{
-												"key": "Accept",
-												"value": "text/plain"
-											},
-											{
-												"key": "Authorization",
-												"value": "Bearer <token>",
-												"description": "Added as a part of security scheme: bearer"
-											}
-										],
-										"url": {
-											"raw": "{{baseUrl}}/api/Establishments/:id",
-											"host": [
-												"{{baseUrl}}"
-											],
-											"path": [
-												"api",
-												"Establishments",
-												":id"
-											],
-											"variable": [
-												{
-													"key": "id"
-												}
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Content-Type",
-											"value": "application/json"
-										}
-									],
-									"cookie": [],
-									"body": "{\n  \"id\": 2738,\n  \"name\": \"string\",\n  \"creationDate\": \"2003-01-11T08:40:43.950Z\",\n  \"location\": \"string\",\n  \"isOpen\": true,\n  \"score\": 5379.34354131905\n}"
+									"key": "Content-Type",
+									"value": "application/json"
 								}
-							]
+							],
+							"cookie": [],
+							"body": "{\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"creationDate\": \"1962-09-17T15:00:24.509Z\",\n  \"location\": \"string\",\n  \"isOpen\": false,\n  \"score\": 5494.453033642321\n}"
 						},
 						{
-							"name": "/api/Establishments/:id",
-							"request": {
+							"name": "Not Found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer <token>",
+										"description": "Added as a part of security scheme: bearer"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/Establishments/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Establishments",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"message\": \"string\"\n}"
+						},
+						{
+							"name": "Internal Server Error",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer <token>",
+										"description": "Added as a part of security scheme: bearer"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/Establishments/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Establishments",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"message\": \"string\"\n}"
+						}
+					]
+				},
+				{
+					"name": "/api/Establishments/:id",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"creationDate\": \"1962-09-17T15:00:24.509Z\",\n  \"location\": \"string\",\n  \"isOpen\": false,\n  \"score\": 5494.453033642321\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/Establishments/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"Establishments",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "string",
+									"description": "(Required) "
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "No Content",
+							"originalRequest": {
 								"method": "PUT",
 								"header": [
 									{
 										"key": "Content-Type",
 										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer <token>",
+										"description": "Added as a part of security scheme: bearer"
 									}
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"id\": 2738,\n  \"name\": \"string\",\n  \"creationDate\": \"2003-01-11T08:40:43.950Z\",\n  \"location\": \"string\",\n  \"isOpen\": true,\n  \"score\": 5379.34354131905\n}",
+									"raw": "{\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"creationDate\": \"1962-09-17T15:00:24.509Z\",\n  \"location\": \"string\",\n  \"isOpen\": false,\n  \"score\": 5494.453033642321\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -273,70 +497,47 @@
 									],
 									"variable": [
 										{
-											"key": "id",
-											"value": "9978",
-											"description": "(Required) "
+											"key": "id"
 										}
 									]
 								}
 							},
-							"response": [
-								{
-									"name": "OK",
-									"originalRequest": {
-										"method": "PUT",
-										"header": [
-											{
-												"key": "Content-Type",
-												"value": "application/json"
-											},
-											{
-												"key": "Authorization",
-												"value": "Bearer <token>",
-												"description": "Added as a part of security scheme: bearer"
-											}
-										],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n  \"id\": 2738,\n  \"name\": \"string\",\n  \"creationDate\": \"2003-01-11T08:40:43.950Z\",\n  \"location\": \"string\",\n  \"isOpen\": true,\n  \"score\": 5379.34354131905\n}",
-											"options": {
-												"raw": {
-													"headerFamily": "json",
-													"language": "json"
-												}
-											}
-										},
-										"url": {
-											"raw": "{{baseUrl}}/api/Establishments/:id",
-											"host": [
-												"{{baseUrl}}"
-											],
-											"path": [
-												"api",
-												"Establishments",
-												":id"
-											],
-											"variable": [
-												{
-													"key": "id"
-												}
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "text",
-									"header": [],
-									"cookie": [],
-									"body": ""
-								}
-							]
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "text",
+							"header": [],
+							"cookie": [],
+							"body": ""
 						},
 						{
-							"name": "/api/Establishments/:id",
-							"request": {
-								"method": "DELETE",
-								"header": [],
+							"name": "Bad Request",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer <token>",
+										"description": "Added as a part of security scheme: bearer"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"creationDate\": \"1962-09-17T15:00:24.509Z\",\n  \"location\": \"string\",\n  \"isOpen\": false,\n  \"score\": 5494.453033642321\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
 								"url": {
 									"raw": "{{baseUrl}}/api/Establishments/:id",
 									"host": [
@@ -349,143 +550,340 @@
 									],
 									"variable": [
 										{
-											"key": "id",
-											"value": "9978",
-											"description": "(Required) "
+											"key": "id"
 										}
 									]
 								}
 							},
-							"response": [
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
 								{
-									"name": "OK",
-									"originalRequest": {
-										"method": "DELETE",
-										"header": [
-											{
-												"key": "Authorization",
-												"value": "Bearer <token>",
-												"description": "Added as a part of security scheme: bearer"
-											}
-										],
-										"url": {
-											"raw": "{{baseUrl}}/api/Establishments/:id",
-											"host": [
-												"{{baseUrl}}"
-											],
-											"path": [
-												"api",
-												"Establishments",
-												":id"
-											],
-											"variable": [
-												{
-													"key": "id"
-												}
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "text",
-									"header": [],
-									"cookie": [],
-									"body": ""
+									"key": "Content-Type",
+									"value": "application/json"
 								}
-							]
+							],
+							"cookie": [],
+							"body": "{\n  \"message\": \"string\"\n}"
 						},
 						{
-							"name": "/api/Establishments/score-range",
-							"request": {
-								"method": "GET",
+							"name": "Not Found",
+							"originalRequest": {
+								"method": "PUT",
 								"header": [
 									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
 										"key": "Accept",
-										"value": "text/plain"
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer <token>",
+										"description": "Added as a part of security scheme: bearer"
 									}
 								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"creationDate\": \"1962-09-17T15:00:24.509Z\",\n  \"location\": \"string\",\n  \"isOpen\": false,\n  \"score\": 5494.453033642321\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
 								"url": {
-									"raw": "{{baseUrl}}/api/Establishments/score-range?minScore=5661.647328841373&maxScore=5661.647328841373",
+									"raw": "{{baseUrl}}/api/Establishments/:id",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
 										"api",
 										"Establishments",
-										"score-range"
+										":id"
 									],
-									"query": [
+									"variable": [
 										{
-											"key": "minScore",
-											"value": "5661.647328841373"
-										},
-										{
-											"key": "maxScore",
-											"value": "5661.647328841373"
+											"key": "id"
 										}
 									]
 								}
 							},
-							"response": [
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
 								{
-									"name": "OK",
-									"originalRequest": {
-										"method": "GET",
-										"header": [
-											{
-												"key": "Accept",
-												"value": "text/plain"
-											},
-											{
-												"key": "Authorization",
-												"value": "Bearer <token>",
-												"description": "Added as a part of security scheme: bearer"
-											}
-										],
-										"url": {
-											"raw": "{{baseUrl}}/api/Establishments/score-range?minScore=5661.647328841373&maxScore=5661.647328841373",
-											"host": [
-												"{{baseUrl}}"
-											],
-											"path": [
-												"api",
-												"Establishments",
-												"score-range"
-											],
-											"query": [
-												{
-													"key": "minScore",
-													"value": "5661.647328841373"
-												},
-												{
-													"key": "maxScore",
-													"value": "5661.647328841373"
-												}
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Content-Type",
-											"value": "application/json"
-										}
-									],
-									"cookie": [],
-									"body": "[\n  {\n    \"id\": 5742,\n    \"name\": \"string\",\n    \"creationDate\": \"1996-11-14T06:42:49.029Z\",\n    \"location\": \"string\",\n    \"isOpen\": true,\n    \"score\": 6391.795478790333\n  },\n  {\n    \"id\": 3087,\n    \"name\": \"string\",\n    \"creationDate\": \"2002-02-25T04:16:42.070Z\",\n    \"location\": \"string\",\n    \"isOpen\": true,\n    \"score\": 1623.866952203361\n  }\n]"
+									"key": "Content-Type",
+									"value": "application/json"
 								}
-							]
+							],
+							"cookie": [],
+							"body": "{\n  \"message\": \"string\"\n}"
 						},
 						{
-							"name": "/api/Establishments/name/:name",
-							"request": {
+							"name": "Internal Server Error",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer <token>",
+										"description": "Added as a part of security scheme: bearer"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"creationDate\": \"1962-09-17T15:00:24.509Z\",\n  \"location\": \"string\",\n  \"isOpen\": false,\n  \"score\": 5494.453033642321\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/Establishments/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Establishments",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"message\": \"string\"\n}"
+						}
+					]
+				},
+				{
+					"name": "/api/Establishments/:id",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/Establishments/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"Establishments",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "string",
+									"description": "(Required) "
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "No Content",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer <token>",
+										"description": "Added as a part of security scheme: bearer"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/Establishments/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Establishments",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "text",
+							"header": [],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Not Found",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer <token>",
+										"description": "Added as a part of security scheme: bearer"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/Establishments/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Establishments",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"message\": \"string\"\n}"
+						},
+						{
+							"name": "Internal Server Error",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer <token>",
+										"description": "Added as a part of security scheme: bearer"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/Establishments/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Establishments",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"message\": \"string\"\n}"
+						}
+					]
+				},
+				{
+					"name": "/api/Establishments/name/:name",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/Establishments/name/:name",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"Establishments",
+								"name",
+								":name"
+							],
+							"variable": [
+								{
+									"key": "name",
+									"value": "string",
+									"description": "(Required) "
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
 								"method": "GET",
 								"header": [
 									{
 										"key": "Accept",
-										"value": "text/plain"
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer <token>",
+										"description": "Added as a part of security scheme: bearer"
 									}
 								],
 								"url": {
@@ -501,147 +899,114 @@
 									],
 									"variable": [
 										{
-											"key": "name",
-											"value": "string",
-											"description": "(Required) "
+											"key": "name"
 										}
 									]
 								}
 							},
-							"response": [
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
 								{
-									"name": "OK",
-									"originalRequest": {
-										"method": "GET",
-										"header": [
-											{
-												"key": "Accept",
-												"value": "text/plain"
-											},
-											{
-												"key": "Authorization",
-												"value": "Bearer <token>",
-												"description": "Added as a part of security scheme: bearer"
-											}
-										],
-										"url": {
-											"raw": "{{baseUrl}}/api/Establishments/name/:name",
-											"host": [
-												"{{baseUrl}}"
-											],
-											"path": [
-												"api",
-												"Establishments",
-												"name",
-												":name"
-											],
-											"variable": [
-												{
-													"key": "name"
-												}
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Content-Type",
-											"value": "application/json"
-										}
-									],
-									"cookie": [],
-									"body": "[\n  {\n    \"id\": 5742,\n    \"name\": \"string\",\n    \"creationDate\": \"1996-11-14T06:42:49.029Z\",\n    \"location\": \"string\",\n    \"isOpen\": true,\n    \"score\": 6391.795478790333\n  },\n  {\n    \"id\": 3087,\n    \"name\": \"string\",\n    \"creationDate\": \"2002-02-25T04:16:42.070Z\",\n    \"location\": \"string\",\n    \"isOpen\": true,\n    \"score\": 1623.866952203361\n  }\n]"
+									"key": "Content-Type",
+									"value": "application/json"
 								}
-							]
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"creationDate\": \"1952-04-23T06:08:50.753Z\",\n    \"location\": \"string\",\n    \"isOpen\": true,\n    \"score\": 9550.718245428741\n  },\n  {\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"creationDate\": \"2011-02-16T12:26:49.939Z\",\n    \"location\": \"string\",\n    \"isOpen\": false,\n    \"score\": 1248.743985952061\n  }\n]"
 						},
 						{
-							"name": "/api/Establishments/score/:score",
-							"request": {
+							"name": "Internal Server Error",
+							"originalRequest": {
 								"method": "GET",
 								"header": [
 									{
 										"key": "Accept",
-										"value": "text/plain"
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer <token>",
+										"description": "Added as a part of security scheme: bearer"
 									}
 								],
 								"url": {
-									"raw": "{{baseUrl}}/api/Establishments/score/:score",
+									"raw": "{{baseUrl}}/api/Establishments/name/:name",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
 										"api",
 										"Establishments",
-										"score",
-										":score"
+										"name",
+										":name"
 									],
 									"variable": [
 										{
-											"key": "score",
-											"value": "5661.647328841373",
-											"description": "(Required) "
+											"key": "name"
 										}
 									]
 								}
 							},
-							"response": [
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
 								{
-									"name": "OK",
-									"originalRequest": {
-										"method": "GET",
-										"header": [
-											{
-												"key": "Accept",
-												"value": "text/plain"
-											},
-											{
-												"key": "Authorization",
-												"value": "Bearer <token>",
-												"description": "Added as a part of security scheme: bearer"
-											}
-										],
-										"url": {
-											"raw": "{{baseUrl}}/api/Establishments/score/:score",
-											"host": [
-												"{{baseUrl}}"
-											],
-											"path": [
-												"api",
-												"Establishments",
-												"score",
-												":score"
-											],
-											"variable": [
-												{
-													"key": "score"
-												}
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Content-Type",
-											"value": "application/json"
-										}
-									],
-									"cookie": [],
-									"body": "[\n  {\n    \"id\": 5742,\n    \"name\": \"string\",\n    \"creationDate\": \"1996-11-14T06:42:49.029Z\",\n    \"location\": \"string\",\n    \"isOpen\": true,\n    \"score\": 6391.795478790333\n  },\n  {\n    \"id\": 3087,\n    \"name\": \"string\",\n    \"creationDate\": \"2002-02-25T04:16:42.070Z\",\n    \"location\": \"string\",\n    \"isOpen\": true,\n    \"score\": 1623.866952203361\n  }\n]"
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"message\": \"string\"\n}"
+						}
+					]
+				},
+				{
+					"name": "/api/Establishments/open/:open",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/Establishments/open/:open",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"Establishments",
+								"open",
+								":open"
+							],
+							"variable": [
+								{
+									"key": "open",
+									"value": "false",
+									"description": "(Required) "
 								}
 							]
-						},
+						}
+					},
+					"response": [
 						{
-							"name": "/api/Establishments/open/:open",
-							"request": {
+							"name": "OK",
+							"originalRequest": {
 								"method": "GET",
 								"header": [
 									{
 										"key": "Accept",
-										"value": "text/plain"
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer <token>",
+										"description": "Added as a part of security scheme: bearer"
 									}
 								],
 								"url": {
@@ -657,69 +1022,370 @@
 									],
 									"variable": [
 										{
-											"key": "open",
-											"value": "false",
-											"description": "(Required) "
+											"key": "open"
 										}
 									]
 								}
 							},
-							"response": [
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
 								{
-									"name": "OK",
-									"originalRequest": {
-										"method": "GET",
-										"header": [
-											{
-												"key": "Accept",
-												"value": "text/plain"
-											},
-											{
-												"key": "Authorization",
-												"value": "Bearer <token>",
-												"description": "Added as a part of security scheme: bearer"
-											}
-										],
-										"url": {
-											"raw": "{{baseUrl}}/api/Establishments/open/:open",
-											"host": [
-												"{{baseUrl}}"
-											],
-											"path": [
-												"api",
-												"Establishments",
-												"open",
-												":open"
-											],
-											"variable": [
-												{
-													"key": "open"
-												}
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Content-Type",
-											"value": "application/json"
-										}
-									],
-									"cookie": [],
-									"body": "[\n  {\n    \"id\": 5742,\n    \"name\": \"string\",\n    \"creationDate\": \"1996-11-14T06:42:49.029Z\",\n    \"location\": \"string\",\n    \"isOpen\": true,\n    \"score\": 6391.795478790333\n  },\n  {\n    \"id\": 3087,\n    \"name\": \"string\",\n    \"creationDate\": \"2002-02-25T04:16:42.070Z\",\n    \"location\": \"string\",\n    \"isOpen\": true,\n    \"score\": 1623.866952203361\n  }\n]"
+									"key": "Content-Type",
+									"value": "application/json"
 								}
-							]
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"creationDate\": \"1952-04-23T06:08:50.753Z\",\n    \"location\": \"string\",\n    \"isOpen\": true,\n    \"score\": 9550.718245428741\n  },\n  {\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"creationDate\": \"2011-02-16T12:26:49.939Z\",\n    \"location\": \"string\",\n    \"isOpen\": false,\n    \"score\": 1248.743985952061\n  }\n]"
+						},
+						{
+							"name": "Internal Server Error",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer <token>",
+										"description": "Added as a part of security scheme: bearer"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/Establishments/open/:open",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Establishments",
+										"open",
+										":open"
+									],
+									"variable": [
+										{
+											"key": "open"
+										}
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"message\": \"string\"\n}"
 						}
 					]
 				},
 				{
-					"name": "Login",
-					"item": [
+					"name": "/api/Establishments/score/:score",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/Establishments/score/:score",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"Establishments",
+								"score",
+								":score"
+							],
+							"variable": [
+								{
+									"key": "score",
+									"value": "6866.4279326330625",
+									"description": "(Required) "
+								}
+							]
+						}
+					},
+					"response": [
 						{
-							"name": "/api/Login",
-							"request": {
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer <token>",
+										"description": "Added as a part of security scheme: bearer"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/Establishments/score/:score",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Establishments",
+										"score",
+										":score"
+									],
+									"variable": [
+										{
+											"key": "score"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"creationDate\": \"1952-04-23T06:08:50.753Z\",\n    \"location\": \"string\",\n    \"isOpen\": true,\n    \"score\": 9550.718245428741\n  },\n  {\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"creationDate\": \"2011-02-16T12:26:49.939Z\",\n    \"location\": \"string\",\n    \"isOpen\": false,\n    \"score\": 1248.743985952061\n  }\n]"
+						},
+						{
+							"name": "Internal Server Error",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer <token>",
+										"description": "Added as a part of security scheme: bearer"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/Establishments/score/:score",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Establishments",
+										"score",
+										":score"
+									],
+									"variable": [
+										{
+											"key": "score"
+										}
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"message\": \"string\"\n}"
+						}
+					]
+				},
+				{
+					"name": "/api/Establishments/score-range",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/Establishments/score-range?minScore=6866.4279326330625&maxScore=6866.4279326330625",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"Establishments",
+								"score-range"
+							],
+							"query": [
+								{
+									"key": "minScore",
+									"value": "6866.4279326330625"
+								},
+								{
+									"key": "maxScore",
+									"value": "6866.4279326330625"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer <token>",
+										"description": "Added as a part of security scheme: bearer"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/Establishments/score-range?minScore=6866.4279326330625&maxScore=6866.4279326330625",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Establishments",
+										"score-range"
+									],
+									"query": [
+										{
+											"key": "minScore",
+											"value": "6866.4279326330625"
+										},
+										{
+											"key": "maxScore",
+											"value": "6866.4279326330625"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"creationDate\": \"1952-04-23T06:08:50.753Z\",\n    \"location\": \"string\",\n    \"isOpen\": true,\n    \"score\": 9550.718245428741\n  },\n  {\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"creationDate\": \"2011-02-16T12:26:49.939Z\",\n    \"location\": \"string\",\n    \"isOpen\": false,\n    \"score\": 1248.743985952061\n  }\n]"
+						},
+						{
+							"name": "Internal Server Error",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer <token>",
+										"description": "Added as a part of security scheme: bearer"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/Establishments/score-range?minScore=6866.4279326330625&maxScore=6866.4279326330625",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Establishments",
+										"score-range"
+									],
+									"query": [
+										{
+											"key": "minScore",
+											"value": "6866.4279326330625"
+										},
+										{
+											"key": "maxScore",
+											"value": "6866.4279326330625"
+										}
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"message\": \"string\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"item": [
+				{
+					"name": "/api/Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"string\",\n  \"password\": \"string\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/Login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"Login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
 								"method": "POST",
 								"header": [
 									{
@@ -728,7 +1394,12 @@
 									},
 									{
 										"key": "Accept",
-										"value": "text/plain"
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer <token>",
+										"description": "Added as a part of security scheme: bearer"
 									}
 								],
 								"body": {
@@ -752,74 +1423,112 @@
 									]
 								}
 							},
-							"response": [
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
 								{
-									"name": "OK",
-									"originalRequest": {
-										"method": "POST",
-										"header": [
-											{
-												"key": "Content-Type",
-												"value": "application/json"
-											},
-											{
-												"key": "Accept",
-												"value": "text/plain"
-											},
-											{
-												"key": "Authorization",
-												"value": "Bearer <token>",
-												"description": "Added as a part of security scheme: bearer"
-											}
-										],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n  \"username\": \"string\",\n  \"password\": \"string\"\n}",
-											"options": {
-												"raw": {
-													"headerFamily": "json",
-													"language": "json"
-												}
-											}
-										},
-										"url": {
-											"raw": "{{baseUrl}}/api/Login",
-											"host": [
-												"{{baseUrl}}"
-											],
-											"path": [
-												"api",
-												"Login"
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Content-Type",
-											"value": "application/json"
-										}
-									],
-									"cookie": [],
-									"body": "{\n  \"token\": \"string\"\n}"
+									"key": "Content-Type",
+									"value": "application/json"
 								}
-							]
+							],
+							"cookie": [],
+							"body": "{\n  \"token\": \"string\"\n}"
+						},
+						{
+							"name": "Internal Server Error",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer <token>",
+										"description": "Added as a part of security scheme: bearer"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"username\": \"string\",\n  \"password\": \"string\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/Login",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Login"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"message\": \"string\"\n}"
 						}
 					]
-				},
+				}
+			]
+		},
+		{
+			"name": "Products",
+			"item": [
 				{
-					"name": "Products",
-					"item": [
+					"name": "/api/Products",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/Products",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"Products"
+							]
+						}
+					},
+					"response": [
 						{
-							"name": "/api/Products",
-							"request": {
+							"name": "OK",
+							"originalRequest": {
 								"method": "GET",
 								"header": [
 									{
 										"key": "Accept",
-										"value": "text/plain"
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer <token>",
+										"description": "Added as a part of security scheme: bearer"
 									}
 								],
 								"url": {
@@ -833,50 +1542,97 @@
 									]
 								}
 							},
-							"response": [
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
 								{
-									"name": "OK",
-									"originalRequest": {
-										"method": "GET",
-										"header": [
-											{
-												"key": "Accept",
-												"value": "text/plain"
-											},
-											{
-												"key": "Authorization",
-												"value": "Bearer <token>",
-												"description": "Added as a part of security scheme: bearer"
-											}
-										],
-										"url": {
-											"raw": "{{baseUrl}}/api/Products",
-											"host": [
-												"{{baseUrl}}"
-											],
-											"path": [
-												"api",
-												"Products"
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Content-Type",
-											"value": "application/json"
-										}
-									],
-									"cookie": [],
-									"body": "[\n  {\n    \"id\": 7482,\n    \"name\": \"string\",\n    \"date\": \"1957-04-05T03:06:28.556Z\",\n    \"price\": 6192.227611463685,\n    \"score\": 7442.343479102064,\n    \"publicationId\": 6575\n  },\n  {\n    \"id\": 583,\n    \"name\": \"string\",\n    \"date\": \"1964-10-05T16:26:37.652Z\",\n    \"price\": 4715.309225002921,\n    \"score\": 8189.831990378025,\n    \"publicationId\": 1502\n  }\n]"
+									"key": "Content-Type",
+									"value": "application/json"
 								}
-							]
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"date\": \"2021-08-26T22:07:42.666Z\",\n    \"price\": 3251.774694474333,\n    \"score\": 3610.9312559550144,\n    \"publicationId\": \"string\"\n  },\n  {\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"date\": \"2017-01-20T21:20:55.979Z\",\n    \"price\": 7397.604209455213,\n    \"score\": 5205.469206572814,\n    \"publicationId\": \"string\"\n  }\n]"
 						},
 						{
-							"name": "/api/Products",
-							"request": {
+							"name": "Internal Server Error",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer <token>",
+										"description": "Added as a part of security scheme: bearer"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/Products",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Products"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"message\": \"string\"\n}"
+						}
+					]
+				},
+				{
+					"name": "/api/Products",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"date\": \"1953-07-21T03:12:51.690Z\",\n  \"price\": 2147.149676531359,\n  \"score\": 9332.893378460252,\n  \"publicationId\": \"string\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/Products",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"Products"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Created",
+							"originalRequest": {
 								"method": "POST",
 								"header": [
 									{
@@ -885,12 +1641,17 @@
 									},
 									{
 										"key": "Accept",
-										"value": "text/plain"
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer <token>",
+										"description": "Added as a part of security scheme: bearer"
 									}
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"id\": 6482,\n  \"name\": \"string\",\n  \"date\": \"1958-04-22T22:02:18.254Z\",\n  \"price\": 4095.671646462622,\n  \"score\": 4921.385613771303,\n  \"publicationId\": 6363\n}",
+									"raw": "{\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"date\": \"1953-07-21T03:12:51.690Z\",\n  \"price\": 2147.149676531359,\n  \"score\": 9332.893378460252,\n  \"publicationId\": \"string\"\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -909,360 +1670,21 @@
 									]
 								}
 							},
-							"response": [
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
 								{
-									"name": "OK",
-									"originalRequest": {
-										"method": "POST",
-										"header": [
-											{
-												"key": "Content-Type",
-												"value": "application/json"
-											},
-											{
-												"key": "Accept",
-												"value": "text/plain"
-											},
-											{
-												"key": "Authorization",
-												"value": "Bearer <token>",
-												"description": "Added as a part of security scheme: bearer"
-											}
-										],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n  \"id\": 6482,\n  \"name\": \"string\",\n  \"date\": \"1958-04-22T22:02:18.254Z\",\n  \"price\": 4095.671646462622,\n  \"score\": 4921.385613771303,\n  \"publicationId\": 6363\n}",
-											"options": {
-												"raw": {
-													"headerFamily": "json",
-													"language": "json"
-												}
-											}
-										},
-										"url": {
-											"raw": "{{baseUrl}}/api/Products",
-											"host": [
-												"{{baseUrl}}"
-											],
-											"path": [
-												"api",
-												"Products"
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Content-Type",
-											"value": "application/json"
-										}
-									],
-									"cookie": [],
-									"body": "{\n  \"id\": 6482,\n  \"name\": \"string\",\n  \"date\": \"1958-04-22T22:02:18.254Z\",\n  \"price\": 4095.671646462622,\n  \"score\": 4921.385613771303,\n  \"publicationId\": 6363\n}"
+									"key": "Content-Type",
+									"value": "application/json"
 								}
-							]
+							],
+							"cookie": [],
+							"body": "{\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"date\": \"1953-07-21T03:12:51.690Z\",\n  \"price\": 2147.149676531359,\n  \"score\": 9332.893378460252,\n  \"publicationId\": \"string\"\n}"
 						},
 						{
-							"name": "/api/Products/:id",
-							"request": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "Accept",
-										"value": "text/plain"
-									}
-								],
-								"url": {
-									"raw": "{{baseUrl}}/api/Products/:id",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"api",
-										"Products",
-										":id"
-									],
-									"variable": [
-										{
-											"key": "id",
-											"value": "9978",
-											"description": "(Required) "
-										}
-									]
-								}
-							},
-							"response": [
-								{
-									"name": "OK",
-									"originalRequest": {
-										"method": "GET",
-										"header": [
-											{
-												"key": "Accept",
-												"value": "text/plain"
-											},
-											{
-												"key": "Authorization",
-												"value": "Bearer <token>",
-												"description": "Added as a part of security scheme: bearer"
-											}
-										],
-										"url": {
-											"raw": "{{baseUrl}}/api/Products/:id",
-											"host": [
-												"{{baseUrl}}"
-											],
-											"path": [
-												"api",
-												"Products",
-												":id"
-											],
-											"variable": [
-												{
-													"key": "id"
-												}
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Content-Type",
-											"value": "application/json"
-										}
-									],
-									"cookie": [],
-									"body": "{\n  \"id\": 6482,\n  \"name\": \"string\",\n  \"date\": \"1958-04-22T22:02:18.254Z\",\n  \"price\": 4095.671646462622,\n  \"score\": 4921.385613771303,\n  \"publicationId\": 6363\n}"
-								}
-							]
-						},
-						{
-							"name": "/api/Products/:id",
-							"request": {
-								"method": "PUT",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/json"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n  \"id\": 6482,\n  \"name\": \"string\",\n  \"date\": \"1958-04-22T22:02:18.254Z\",\n  \"price\": 4095.671646462622,\n  \"score\": 4921.385613771303,\n  \"publicationId\": 6363\n}",
-									"options": {
-										"raw": {
-											"headerFamily": "json",
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{baseUrl}}/api/Products/:id",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"api",
-										"Products",
-										":id"
-									],
-									"variable": [
-										{
-											"key": "id",
-											"value": "9978",
-											"description": "(Required) "
-										}
-									]
-								}
-							},
-							"response": [
-								{
-									"name": "OK",
-									"originalRequest": {
-										"method": "PUT",
-										"header": [
-											{
-												"key": "Content-Type",
-												"value": "application/json"
-											},
-											{
-												"key": "Authorization",
-												"value": "Bearer <token>",
-												"description": "Added as a part of security scheme: bearer"
-											}
-										],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n  \"id\": 6482,\n  \"name\": \"string\",\n  \"date\": \"1958-04-22T22:02:18.254Z\",\n  \"price\": 4095.671646462622,\n  \"score\": 4921.385613771303,\n  \"publicationId\": 6363\n}",
-											"options": {
-												"raw": {
-													"headerFamily": "json",
-													"language": "json"
-												}
-											}
-										},
-										"url": {
-											"raw": "{{baseUrl}}/api/Products/:id",
-											"host": [
-												"{{baseUrl}}"
-											],
-											"path": [
-												"api",
-												"Products",
-												":id"
-											],
-											"variable": [
-												{
-													"key": "id"
-												}
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "text",
-									"header": [],
-									"cookie": [],
-									"body": ""
-								}
-							]
-						},
-						{
-							"name": "/api/Products/:id",
-							"request": {
-								"method": "DELETE",
-								"header": [],
-								"url": {
-									"raw": "{{baseUrl}}/api/Products/:id",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"api",
-										"Products",
-										":id"
-									],
-									"variable": [
-										{
-											"key": "id",
-											"value": "9978",
-											"description": "(Required) "
-										}
-									]
-								}
-							},
-							"response": [
-								{
-									"name": "OK",
-									"originalRequest": {
-										"method": "DELETE",
-										"header": [
-											{
-												"key": "Authorization",
-												"value": "Bearer <token>",
-												"description": "Added as a part of security scheme: bearer"
-											}
-										],
-										"url": {
-											"raw": "{{baseUrl}}/api/Products/:id",
-											"host": [
-												"{{baseUrl}}"
-											],
-											"path": [
-												"api",
-												"Products",
-												":id"
-											],
-											"variable": [
-												{
-													"key": "id"
-												}
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "text",
-									"header": [],
-									"cookie": [],
-									"body": ""
-								}
-							]
-						}
-					]
-				},
-				{
-					"name": "Publications",
-					"item": [
-						{
-							"name": "/api/Publications",
-							"request": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "Accept",
-										"value": "text/plain"
-									}
-								],
-								"url": {
-									"raw": "{{baseUrl}}/api/Publications",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"api",
-										"Publications"
-									]
-								}
-							},
-							"response": [
-								{
-									"name": "OK",
-									"originalRequest": {
-										"method": "GET",
-										"header": [
-											{
-												"key": "Accept",
-												"value": "text/plain"
-											},
-											{
-												"key": "Authorization",
-												"value": "Bearer <token>",
-												"description": "Added as a part of security scheme: bearer"
-											}
-										],
-										"url": {
-											"raw": "{{baseUrl}}/api/Publications",
-											"host": [
-												"{{baseUrl}}"
-											],
-											"path": [
-												"api",
-												"Publications"
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Content-Type",
-											"value": "application/json"
-										}
-									],
-									"cookie": [],
-									"body": "[\n  {\n    \"id\": 4168,\n    \"date\": \"2023-01-10T09:14:33.643Z\",\n    \"totalPrice\": 6798.255555434517,\n    \"totalScore\": 2351.113394676393,\n    \"photo\": \"string\",\n    \"userId\": 6862,\n    \"establishmentId\": 2115,\n    \"establishment\": {\n      \"id\": 5557,\n      \"name\": \"string\",\n      \"creationDate\": \"1979-05-19T08:10:38.825Z\",\n      \"location\": \"string\",\n      \"isOpen\": false,\n      \"score\": 992.203103121555\n    },\n    \"products\": [\n      {\n        \"id\": 2471,\n        \"name\": \"string\",\n        \"date\": \"2009-02-05T03:25:59.272Z\",\n        \"price\": 309.0640654348986,\n        \"score\": 198.30025165578414,\n        \"publicationId\": 2155\n      },\n      {\n        \"id\": 3562,\n        \"name\": \"string\",\n        \"date\": \"2011-05-08T18:50:41.397Z\",\n        \"price\": 6899.589567208698,\n        \"score\": 7520.8554120045,\n        \"publicationId\": 7482\n      }\n    ]\n  },\n  {\n    \"id\": 3275,\n    \"date\": \"1975-01-08T06:50:34.150Z\",\n    \"totalPrice\": 1081.697360560192,\n    \"totalScore\": 1642.7463379365681,\n    \"photo\": \"string\",\n    \"userId\": 930,\n    \"establishmentId\": 8740,\n    \"establishment\": {\n      \"id\": 4455,\n      \"name\": \"string\",\n      \"creationDate\": \"1967-02-16T11:24:56.556Z\",\n      \"location\": \"string\",\n      \"isOpen\": false,\n      \"score\": 6430.681253575196\n    },\n    \"products\": [\n      {\n        \"id\": 5434,\n        \"name\": \"string\",\n        \"date\": \"1997-06-16T18:53:22.264Z\",\n        \"price\": 2059.8012884164827,\n        \"score\": 8664.135187922218,\n        \"publicationId\": 7303\n      },\n      {\n        \"id\": 7953,\n        \"name\": \"string\",\n        \"date\": \"1946-04-10T06:11:37.385Z\",\n        \"price\": 9152.047295732982,\n        \"score\": 9914.143838399501,\n        \"publicationId\": 524\n      }\n    ]\n  }\n]"
-								}
-							]
-						},
-						{
-							"name": "/api/Publications",
-							"request": {
+							"name": "Bad Request",
+							"originalRequest": {
 								"method": "POST",
 								"header": [
 									{
@@ -1271,12 +1693,975 @@
 									},
 									{
 										"key": "Accept",
-										"value": "text/plain"
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer <token>",
+										"description": "Added as a part of security scheme: bearer"
 									}
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"id\": 4787,\n  \"date\": \"1965-08-01T02:28:54.917Z\",\n  \"totalPrice\": 4331.35073294778,\n  \"totalScore\": 6760.087027908002,\n  \"photo\": \"string\",\n  \"userId\": 4070,\n  \"establishmentId\": 8720,\n  \"establishment\": {\n    \"id\": 7050,\n    \"name\": \"string\",\n    \"creationDate\": \"1986-02-01T09:41:59.154Z\",\n    \"location\": \"string\",\n    \"isOpen\": true,\n    \"score\": 5016.715723682423\n  },\n  \"products\": [\n    {\n      \"id\": 2519,\n      \"name\": \"string\",\n      \"date\": \"1986-06-13T21:13:51.126Z\",\n      \"price\": 7717.631714803692,\n      \"score\": 3157.0356341239303,\n      \"publicationId\": 3066\n    },\n    {\n      \"id\": 2930,\n      \"name\": \"string\",\n      \"date\": \"1961-09-11T03:19:21.047Z\",\n      \"price\": 2119.8004749636966,\n      \"score\": 3587.954886021455,\n      \"publicationId\": 512\n    }\n  ]\n}",
+									"raw": "{\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"date\": \"1953-07-21T03:12:51.690Z\",\n  \"price\": 2147.149676531359,\n  \"score\": 9332.893378460252,\n  \"publicationId\": \"string\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/Products",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Products"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"message\": \"string\"\n}"
+						},
+						{
+							"name": "Internal Server Error",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer <token>",
+										"description": "Added as a part of security scheme: bearer"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"date\": \"1953-07-21T03:12:51.690Z\",\n  \"price\": 2147.149676531359,\n  \"score\": 9332.893378460252,\n  \"publicationId\": \"string\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/Products",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Products"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"message\": \"string\"\n}"
+						}
+					]
+				},
+				{
+					"name": "/api/Products/:id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/Products/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"Products",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "string",
+									"description": "(Required) "
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer <token>",
+										"description": "Added as a part of security scheme: bearer"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/Products/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Products",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"date\": \"1953-07-21T03:12:51.690Z\",\n  \"price\": 2147.149676531359,\n  \"score\": 9332.893378460252,\n  \"publicationId\": \"string\"\n}"
+						},
+						{
+							"name": "Not Found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer <token>",
+										"description": "Added as a part of security scheme: bearer"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/Products/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Products",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"message\": \"string\"\n}"
+						},
+						{
+							"name": "Internal Server Error",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer <token>",
+										"description": "Added as a part of security scheme: bearer"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/Products/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Products",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"message\": \"string\"\n}"
+						}
+					]
+				},
+				{
+					"name": "/api/Products/:id",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"date\": \"1953-07-21T03:12:51.690Z\",\n  \"price\": 2147.149676531359,\n  \"score\": 9332.893378460252,\n  \"publicationId\": \"string\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/Products/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"Products",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "string",
+									"description": "(Required) "
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "No Content",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer <token>",
+										"description": "Added as a part of security scheme: bearer"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"date\": \"1953-07-21T03:12:51.690Z\",\n  \"price\": 2147.149676531359,\n  \"score\": 9332.893378460252,\n  \"publicationId\": \"string\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/Products/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Products",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "text",
+							"header": [],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Bad Request",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer <token>",
+										"description": "Added as a part of security scheme: bearer"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"date\": \"1953-07-21T03:12:51.690Z\",\n  \"price\": 2147.149676531359,\n  \"score\": 9332.893378460252,\n  \"publicationId\": \"string\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/Products/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Products",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"message\": \"string\"\n}"
+						},
+						{
+							"name": "Not Found",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer <token>",
+										"description": "Added as a part of security scheme: bearer"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"date\": \"1953-07-21T03:12:51.690Z\",\n  \"price\": 2147.149676531359,\n  \"score\": 9332.893378460252,\n  \"publicationId\": \"string\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/Products/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Products",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"message\": \"string\"\n}"
+						},
+						{
+							"name": "Internal Server Error",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer <token>",
+										"description": "Added as a part of security scheme: bearer"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"date\": \"1953-07-21T03:12:51.690Z\",\n  \"price\": 2147.149676531359,\n  \"score\": 9332.893378460252,\n  \"publicationId\": \"string\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/Products/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Products",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"message\": \"string\"\n}"
+						}
+					]
+				},
+				{
+					"name": "/api/Products/:id",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/Products/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"Products",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "string",
+									"description": "(Required) "
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "No Content",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer <token>",
+										"description": "Added as a part of security scheme: bearer"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/Products/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Products",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "text",
+							"header": [],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Not Found",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer <token>",
+										"description": "Added as a part of security scheme: bearer"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/Products/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Products",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"message\": \"string\"\n}"
+						},
+						{
+							"name": "Internal Server Error",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer <token>",
+										"description": "Added as a part of security scheme: bearer"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/Products/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Products",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"message\": \"string\"\n}"
+						}
+					]
+				},
+				{
+					"name": "/api/Products/publication/:id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/Products/publication/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"Products",
+								"publication",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "string",
+									"description": "(Required) "
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer <token>",
+										"description": "Added as a part of security scheme: bearer"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/Products/publication/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Products",
+										"publication",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"date\": \"2021-08-26T22:07:42.666Z\",\n    \"price\": 3251.774694474333,\n    \"score\": 3610.9312559550144,\n    \"publicationId\": \"string\"\n  },\n  {\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"date\": \"2017-01-20T21:20:55.979Z\",\n    \"price\": 7397.604209455213,\n    \"score\": 5205.469206572814,\n    \"publicationId\": \"string\"\n  }\n]"
+						},
+						{
+							"name": "Internal Server Error",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer <token>",
+										"description": "Added as a part of security scheme: bearer"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/Products/publication/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Products",
+										"publication",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"message\": \"string\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Publications",
+			"item": [
+				{
+					"name": "/api/Publications",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/Publications",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"Publications"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer <token>",
+										"description": "Added as a part of security scheme: bearer"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/Publications",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Publications"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"id\": \"string\",\n    \"date\": \"1964-12-31T08:51:50.121Z\",\n    \"totalPrice\": 9333.270020189475,\n    \"totalScore\": 8502.647131684746,\n    \"photo\": \"string\",\n    \"userId\": \"string\",\n    \"establishmentId\": \"string\",\n    \"establishment\": {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"creationDate\": \"1992-03-05T12:06:43.725Z\",\n      \"location\": \"string\",\n      \"isOpen\": false,\n      \"score\": 1959.4525250602223\n    },\n    \"products\": [\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"date\": \"2017-05-28T14:39:44.008Z\",\n        \"price\": 5833.021438215174,\n        \"score\": 5052.133838796108,\n        \"publicationId\": \"string\"\n      },\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"date\": \"1991-04-26T21:43:03.802Z\",\n        \"price\": 2516.623689648577,\n        \"score\": 7355.190685286184,\n        \"publicationId\": \"string\"\n      }\n    ]\n  },\n  {\n    \"id\": \"string\",\n    \"date\": \"1955-05-25T17:11:07.753Z\",\n    \"totalPrice\": 6353.527639249041,\n    \"totalScore\": 5342.642048015858,\n    \"photo\": \"string\",\n    \"userId\": \"string\",\n    \"establishmentId\": \"string\",\n    \"establishment\": {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"creationDate\": \"1996-08-12T05:50:32.279Z\",\n      \"location\": \"string\",\n      \"isOpen\": true,\n      \"score\": 6263.25479705818\n    },\n    \"products\": [\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"date\": \"1946-03-13T16:59:57.236Z\",\n        \"price\": 1228.544160761531,\n        \"score\": 1110.3874238747692,\n        \"publicationId\": \"string\"\n      },\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"date\": \"1987-01-27T12:01:41.548Z\",\n        \"price\": 2481.564451903403,\n        \"score\": 4387.338538085927,\n        \"publicationId\": \"string\"\n      }\n    ]\n  }\n]"
+						},
+						{
+							"name": "Internal Server Error",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer <token>",
+										"description": "Added as a part of security scheme: bearer"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/Publications",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Publications"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"message\": \"string\"\n}"
+						}
+					]
+				},
+				{
+					"name": "/api/Publications",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": \"string\",\n  \"date\": \"1963-09-06T23:50:11.183Z\",\n  \"totalPrice\": 2908.1821466659585,\n  \"totalScore\": 6016.662422102411,\n  \"photo\": \"string\",\n  \"userId\": \"string\",\n  \"establishmentId\": \"string\",\n  \"establishment\": {\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"creationDate\": \"1997-06-13T17:24:24.426Z\",\n    \"location\": \"string\",\n    \"isOpen\": true,\n    \"score\": 4333.594860831905\n  },\n  \"products\": [\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"date\": \"1956-08-05T15:39:22.735Z\",\n      \"price\": 4357.573029482062,\n      \"score\": 9407.269586634036,\n      \"publicationId\": \"string\"\n    },\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"date\": \"1994-04-30T22:47:12.656Z\",\n      \"price\": 9624.690318342664,\n      \"score\": 1550.8071234795973,\n      \"publicationId\": \"string\"\n    }\n  ]\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/Publications",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"Publications"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Created",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer <token>",
+										"description": "Added as a part of security scheme: bearer"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": \"string\",\n  \"date\": \"1963-09-06T23:50:11.183Z\",\n  \"totalPrice\": 2908.1821466659585,\n  \"totalScore\": 6016.662422102411,\n  \"photo\": \"string\",\n  \"userId\": \"string\",\n  \"establishmentId\": \"string\",\n  \"establishment\": {\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"creationDate\": \"1997-06-13T17:24:24.426Z\",\n    \"location\": \"string\",\n    \"isOpen\": true,\n    \"score\": 4333.594860831905\n  },\n  \"products\": [\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"date\": \"1956-08-05T15:39:22.735Z\",\n      \"price\": 4357.573029482062,\n      \"score\": 9407.269586634036,\n      \"publicationId\": \"string\"\n    },\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"date\": \"1994-04-30T22:47:12.656Z\",\n      \"price\": 9624.690318342664,\n      \"score\": 1550.8071234795973,\n      \"publicationId\": \"string\"\n    }\n  ]\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -1295,69 +2680,167 @@
 									]
 								}
 							},
-							"response": [
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
 								{
-									"name": "OK",
-									"originalRequest": {
-										"method": "POST",
-										"header": [
-											{
-												"key": "Content-Type",
-												"value": "application/json"
-											},
-											{
-												"key": "Accept",
-												"value": "text/plain"
-											},
-											{
-												"key": "Authorization",
-												"value": "Bearer <token>",
-												"description": "Added as a part of security scheme: bearer"
-											}
-										],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n  \"id\": 4787,\n  \"date\": \"1965-08-01T02:28:54.917Z\",\n  \"totalPrice\": 4331.35073294778,\n  \"totalScore\": 6760.087027908002,\n  \"photo\": \"string\",\n  \"userId\": 4070,\n  \"establishmentId\": 8720,\n  \"establishment\": {\n    \"id\": 7050,\n    \"name\": \"string\",\n    \"creationDate\": \"1986-02-01T09:41:59.154Z\",\n    \"location\": \"string\",\n    \"isOpen\": true,\n    \"score\": 5016.715723682423\n  },\n  \"products\": [\n    {\n      \"id\": 2519,\n      \"name\": \"string\",\n      \"date\": \"1986-06-13T21:13:51.126Z\",\n      \"price\": 7717.631714803692,\n      \"score\": 3157.0356341239303,\n      \"publicationId\": 3066\n    },\n    {\n      \"id\": 2930,\n      \"name\": \"string\",\n      \"date\": \"1961-09-11T03:19:21.047Z\",\n      \"price\": 2119.8004749636966,\n      \"score\": 3587.954886021455,\n      \"publicationId\": 512\n    }\n  ]\n}",
-											"options": {
-												"raw": {
-													"headerFamily": "json",
-													"language": "json"
-												}
-											}
-										},
-										"url": {
-											"raw": "{{baseUrl}}/api/Publications",
-											"host": [
-												"{{baseUrl}}"
-											],
-											"path": [
-												"api",
-												"Publications"
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Content-Type",
-											"value": "application/json"
-										}
-									],
-									"cookie": [],
-									"body": "{\n  \"id\": 4787,\n  \"date\": \"1965-08-01T02:28:54.917Z\",\n  \"totalPrice\": 4331.35073294778,\n  \"totalScore\": 6760.087027908002,\n  \"photo\": \"string\",\n  \"userId\": 4070,\n  \"establishmentId\": 8720,\n  \"establishment\": {\n    \"id\": 7050,\n    \"name\": \"string\",\n    \"creationDate\": \"1986-02-01T09:41:59.154Z\",\n    \"location\": \"string\",\n    \"isOpen\": true,\n    \"score\": 5016.715723682423\n  },\n  \"products\": [\n    {\n      \"id\": 2519,\n      \"name\": \"string\",\n      \"date\": \"1986-06-13T21:13:51.126Z\",\n      \"price\": 7717.631714803692,\n      \"score\": 3157.0356341239303,\n      \"publicationId\": 3066\n    },\n    {\n      \"id\": 2930,\n      \"name\": \"string\",\n      \"date\": \"1961-09-11T03:19:21.047Z\",\n      \"price\": 2119.8004749636966,\n      \"score\": 3587.954886021455,\n      \"publicationId\": 512\n    }\n  ]\n}"
+									"key": "Content-Type",
+									"value": "application/json"
 								}
-							]
+							],
+							"cookie": [],
+							"body": "{\n  \"id\": \"string\",\n  \"date\": \"1963-09-06T23:50:11.183Z\",\n  \"totalPrice\": 2908.1821466659585,\n  \"totalScore\": 6016.662422102411,\n  \"photo\": \"string\",\n  \"userId\": \"string\",\n  \"establishmentId\": \"string\",\n  \"establishment\": {\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"creationDate\": \"1997-06-13T17:24:24.426Z\",\n    \"location\": \"string\",\n    \"isOpen\": true,\n    \"score\": 4333.594860831905\n  },\n  \"products\": [\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"date\": \"1956-08-05T15:39:22.735Z\",\n      \"price\": 4357.573029482062,\n      \"score\": 9407.269586634036,\n      \"publicationId\": \"string\"\n    },\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"date\": \"1994-04-30T22:47:12.656Z\",\n      \"price\": 9624.690318342664,\n      \"score\": 1550.8071234795973,\n      \"publicationId\": \"string\"\n    }\n  ]\n}"
 						},
 						{
-							"name": "/api/Publications/:id",
-							"request": {
+							"name": "Bad Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer <token>",
+										"description": "Added as a part of security scheme: bearer"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": \"string\",\n  \"date\": \"1963-09-06T23:50:11.183Z\",\n  \"totalPrice\": 2908.1821466659585,\n  \"totalScore\": 6016.662422102411,\n  \"photo\": \"string\",\n  \"userId\": \"string\",\n  \"establishmentId\": \"string\",\n  \"establishment\": {\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"creationDate\": \"1997-06-13T17:24:24.426Z\",\n    \"location\": \"string\",\n    \"isOpen\": true,\n    \"score\": 4333.594860831905\n  },\n  \"products\": [\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"date\": \"1956-08-05T15:39:22.735Z\",\n      \"price\": 4357.573029482062,\n      \"score\": 9407.269586634036,\n      \"publicationId\": \"string\"\n    },\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"date\": \"1994-04-30T22:47:12.656Z\",\n      \"price\": 9624.690318342664,\n      \"score\": 1550.8071234795973,\n      \"publicationId\": \"string\"\n    }\n  ]\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/Publications",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Publications"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"message\": \"string\"\n}"
+						},
+						{
+							"name": "Internal Server Error",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer <token>",
+										"description": "Added as a part of security scheme: bearer"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": \"string\",\n  \"date\": \"1963-09-06T23:50:11.183Z\",\n  \"totalPrice\": 2908.1821466659585,\n  \"totalScore\": 6016.662422102411,\n  \"photo\": \"string\",\n  \"userId\": \"string\",\n  \"establishmentId\": \"string\",\n  \"establishment\": {\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"creationDate\": \"1997-06-13T17:24:24.426Z\",\n    \"location\": \"string\",\n    \"isOpen\": true,\n    \"score\": 4333.594860831905\n  },\n  \"products\": [\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"date\": \"1956-08-05T15:39:22.735Z\",\n      \"price\": 4357.573029482062,\n      \"score\": 9407.269586634036,\n      \"publicationId\": \"string\"\n    },\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"date\": \"1994-04-30T22:47:12.656Z\",\n      \"price\": 9624.690318342664,\n      \"score\": 1550.8071234795973,\n      \"publicationId\": \"string\"\n    }\n  ]\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/Publications",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Publications"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"message\": \"string\"\n}"
+						}
+					]
+				},
+				{
+					"name": "/api/Publications/:id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/Publications/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"Publications",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "string",
+									"description": "(Required) "
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
 								"method": "GET",
 								"header": [
 									{
 										"key": "Accept",
-										"value": "text/plain"
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer <token>",
+										"description": "Added as a part of security scheme: bearer"
 									}
 								],
 								"url": {
@@ -1372,73 +2855,175 @@
 									],
 									"variable": [
 										{
-											"key": "id",
-											"value": "9978",
-											"description": "(Required) "
+											"key": "id"
 										}
 									]
 								}
 							},
-							"response": [
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
 								{
-									"name": "OK",
-									"originalRequest": {
-										"method": "GET",
-										"header": [
-											{
-												"key": "Accept",
-												"value": "text/plain"
-											},
-											{
-												"key": "Authorization",
-												"value": "Bearer <token>",
-												"description": "Added as a part of security scheme: bearer"
-											}
-										],
-										"url": {
-											"raw": "{{baseUrl}}/api/Publications/:id",
-											"host": [
-												"{{baseUrl}}"
-											],
-											"path": [
-												"api",
-												"Publications",
-												":id"
-											],
-											"variable": [
-												{
-													"key": "id"
-												}
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Content-Type",
-											"value": "application/json"
-										}
-									],
-									"cookie": [],
-									"body": "{\n  \"id\": 4787,\n  \"date\": \"1965-08-01T02:28:54.917Z\",\n  \"totalPrice\": 4331.35073294778,\n  \"totalScore\": 6760.087027908002,\n  \"photo\": \"string\",\n  \"userId\": 4070,\n  \"establishmentId\": 8720,\n  \"establishment\": {\n    \"id\": 7050,\n    \"name\": \"string\",\n    \"creationDate\": \"1986-02-01T09:41:59.154Z\",\n    \"location\": \"string\",\n    \"isOpen\": true,\n    \"score\": 5016.715723682423\n  },\n  \"products\": [\n    {\n      \"id\": 2519,\n      \"name\": \"string\",\n      \"date\": \"1986-06-13T21:13:51.126Z\",\n      \"price\": 7717.631714803692,\n      \"score\": 3157.0356341239303,\n      \"publicationId\": 3066\n    },\n    {\n      \"id\": 2930,\n      \"name\": \"string\",\n      \"date\": \"1961-09-11T03:19:21.047Z\",\n      \"price\": 2119.8004749636966,\n      \"score\": 3587.954886021455,\n      \"publicationId\": 512\n    }\n  ]\n}"
+									"key": "Content-Type",
+									"value": "application/json"
 								}
-							]
+							],
+							"cookie": [],
+							"body": "{\n  \"id\": \"string\",\n  \"date\": \"1963-09-06T23:50:11.183Z\",\n  \"totalPrice\": 2908.1821466659585,\n  \"totalScore\": 6016.662422102411,\n  \"photo\": \"string\",\n  \"userId\": \"string\",\n  \"establishmentId\": \"string\",\n  \"establishment\": {\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"creationDate\": \"1997-06-13T17:24:24.426Z\",\n    \"location\": \"string\",\n    \"isOpen\": true,\n    \"score\": 4333.594860831905\n  },\n  \"products\": [\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"date\": \"1956-08-05T15:39:22.735Z\",\n      \"price\": 4357.573029482062,\n      \"score\": 9407.269586634036,\n      \"publicationId\": \"string\"\n    },\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"date\": \"1994-04-30T22:47:12.656Z\",\n      \"price\": 9624.690318342664,\n      \"score\": 1550.8071234795973,\n      \"publicationId\": \"string\"\n    }\n  ]\n}"
 						},
 						{
-							"name": "/api/Publications/:id",
-							"request": {
+							"name": "Not Found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer <token>",
+										"description": "Added as a part of security scheme: bearer"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/Publications/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Publications",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"message\": \"string\"\n}"
+						},
+						{
+							"name": "Internal Server Error",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer <token>",
+										"description": "Added as a part of security scheme: bearer"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/Publications/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Publications",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"message\": \"string\"\n}"
+						}
+					]
+				},
+				{
+					"name": "/api/Publications/:id",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": \"string\",\n  \"date\": \"1963-09-06T23:50:11.183Z\",\n  \"totalPrice\": 2908.1821466659585,\n  \"totalScore\": 6016.662422102411,\n  \"photo\": \"string\",\n  \"userId\": \"string\",\n  \"establishmentId\": \"string\",\n  \"establishment\": {\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"creationDate\": \"1997-06-13T17:24:24.426Z\",\n    \"location\": \"string\",\n    \"isOpen\": true,\n    \"score\": 4333.594860831905\n  },\n  \"products\": [\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"date\": \"1956-08-05T15:39:22.735Z\",\n      \"price\": 4357.573029482062,\n      \"score\": 9407.269586634036,\n      \"publicationId\": \"string\"\n    },\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"date\": \"1994-04-30T22:47:12.656Z\",\n      \"price\": 9624.690318342664,\n      \"score\": 1550.8071234795973,\n      \"publicationId\": \"string\"\n    }\n  ]\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/Publications/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"Publications",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "string",
+									"description": "(Required) "
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "No Content",
+							"originalRequest": {
 								"method": "PUT",
 								"header": [
 									{
 										"key": "Content-Type",
 										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer <token>",
+										"description": "Added as a part of security scheme: bearer"
 									}
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"id\": 4787,\n  \"date\": \"1965-08-01T02:28:54.917Z\",\n  \"totalPrice\": 4331.35073294778,\n  \"totalScore\": 6760.087027908002,\n  \"photo\": \"string\",\n  \"userId\": 4070,\n  \"establishmentId\": 8720,\n  \"establishment\": {\n    \"id\": 7050,\n    \"name\": \"string\",\n    \"creationDate\": \"1986-02-01T09:41:59.154Z\",\n    \"location\": \"string\",\n    \"isOpen\": true,\n    \"score\": 5016.715723682423\n  },\n  \"products\": [\n    {\n      \"id\": 2519,\n      \"name\": \"string\",\n      \"date\": \"1986-06-13T21:13:51.126Z\",\n      \"price\": 7717.631714803692,\n      \"score\": 3157.0356341239303,\n      \"publicationId\": 3066\n    },\n    {\n      \"id\": 2930,\n      \"name\": \"string\",\n      \"date\": \"1961-09-11T03:19:21.047Z\",\n      \"price\": 2119.8004749636966,\n      \"score\": 3587.954886021455,\n      \"publicationId\": 512\n    }\n  ]\n}",
+									"raw": "{\n  \"id\": \"string\",\n  \"date\": \"1963-09-06T23:50:11.183Z\",\n  \"totalPrice\": 2908.1821466659585,\n  \"totalScore\": 6016.662422102411,\n  \"photo\": \"string\",\n  \"userId\": \"string\",\n  \"establishmentId\": \"string\",\n  \"establishment\": {\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"creationDate\": \"1997-06-13T17:24:24.426Z\",\n    \"location\": \"string\",\n    \"isOpen\": true,\n    \"score\": 4333.594860831905\n  },\n  \"products\": [\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"date\": \"1956-08-05T15:39:22.735Z\",\n      \"price\": 4357.573029482062,\n      \"score\": 9407.269586634036,\n      \"publicationId\": \"string\"\n    },\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"date\": \"1994-04-30T22:47:12.656Z\",\n      \"price\": 9624.690318342664,\n      \"score\": 1550.8071234795973,\n      \"publicationId\": \"string\"\n    }\n  ]\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -1458,70 +3043,47 @@
 									],
 									"variable": [
 										{
-											"key": "id",
-											"value": "9978",
-											"description": "(Required) "
+											"key": "id"
 										}
 									]
 								}
 							},
-							"response": [
-								{
-									"name": "OK",
-									"originalRequest": {
-										"method": "PUT",
-										"header": [
-											{
-												"key": "Content-Type",
-												"value": "application/json"
-											},
-											{
-												"key": "Authorization",
-												"value": "Bearer <token>",
-												"description": "Added as a part of security scheme: bearer"
-											}
-										],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n  \"id\": 4787,\n  \"date\": \"1965-08-01T02:28:54.917Z\",\n  \"totalPrice\": 4331.35073294778,\n  \"totalScore\": 6760.087027908002,\n  \"photo\": \"string\",\n  \"userId\": 4070,\n  \"establishmentId\": 8720,\n  \"establishment\": {\n    \"id\": 7050,\n    \"name\": \"string\",\n    \"creationDate\": \"1986-02-01T09:41:59.154Z\",\n    \"location\": \"string\",\n    \"isOpen\": true,\n    \"score\": 5016.715723682423\n  },\n  \"products\": [\n    {\n      \"id\": 2519,\n      \"name\": \"string\",\n      \"date\": \"1986-06-13T21:13:51.126Z\",\n      \"price\": 7717.631714803692,\n      \"score\": 3157.0356341239303,\n      \"publicationId\": 3066\n    },\n    {\n      \"id\": 2930,\n      \"name\": \"string\",\n      \"date\": \"1961-09-11T03:19:21.047Z\",\n      \"price\": 2119.8004749636966,\n      \"score\": 3587.954886021455,\n      \"publicationId\": 512\n    }\n  ]\n}",
-											"options": {
-												"raw": {
-													"headerFamily": "json",
-													"language": "json"
-												}
-											}
-										},
-										"url": {
-											"raw": "{{baseUrl}}/api/Publications/:id",
-											"host": [
-												"{{baseUrl}}"
-											],
-											"path": [
-												"api",
-												"Publications",
-												":id"
-											],
-											"variable": [
-												{
-													"key": "id"
-												}
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "text",
-									"header": [],
-									"cookie": [],
-									"body": ""
-								}
-							]
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "text",
+							"header": [],
+							"cookie": [],
+							"body": ""
 						},
 						{
-							"name": "/api/Publications/:id",
-							"request": {
-								"method": "DELETE",
-								"header": [],
+							"name": "Bad Request",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer <token>",
+										"description": "Added as a part of security scheme: bearer"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": \"string\",\n  \"date\": \"1963-09-06T23:50:11.183Z\",\n  \"totalPrice\": 2908.1821466659585,\n  \"totalScore\": 6016.662422102411,\n  \"photo\": \"string\",\n  \"userId\": \"string\",\n  \"establishmentId\": \"string\",\n  \"establishment\": {\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"creationDate\": \"1997-06-13T17:24:24.426Z\",\n    \"location\": \"string\",\n    \"isOpen\": true,\n    \"score\": 4333.594860831905\n  },\n  \"products\": [\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"date\": \"1956-08-05T15:39:22.735Z\",\n      \"price\": 4357.573029482062,\n      \"score\": 9407.269586634036,\n      \"publicationId\": \"string\"\n    },\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"date\": \"1994-04-30T22:47:12.656Z\",\n      \"price\": 9624.690318342664,\n      \"score\": 1550.8071234795973,\n      \"publicationId\": \"string\"\n    }\n  ]\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
 								"url": {
 									"raw": "{{baseUrl}}/api/Publications/:id",
 									"host": [
@@ -1534,305 +3096,340 @@
 									],
 									"variable": [
 										{
-											"key": "id",
-											"value": "9978",
-											"description": "(Required) "
+											"key": "id"
 										}
 									]
 								}
 							},
-							"response": [
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
 								{
-									"name": "OK",
-									"originalRequest": {
-										"method": "DELETE",
-										"header": [
-											{
-												"key": "Authorization",
-												"value": "Bearer <token>",
-												"description": "Added as a part of security scheme: bearer"
-											}
-										],
-										"url": {
-											"raw": "{{baseUrl}}/api/Publications/:id",
-											"host": [
-												"{{baseUrl}}"
-											],
-											"path": [
-												"api",
-												"Publications",
-												":id"
-											],
-											"variable": [
-												{
-													"key": "id"
-												}
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "text",
-									"header": [],
-									"cookie": [],
-									"body": ""
+									"key": "Content-Type",
+									"value": "application/json"
 								}
-							]
+							],
+							"cookie": [],
+							"body": "{\n  \"message\": \"string\"\n}"
 						},
 						{
-							"name": "/api/Publications/establishment/:id",
-							"request": {
-								"method": "GET",
+							"name": "Not Found",
+							"originalRequest": {
+								"method": "PUT",
 								"header": [
 									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
 										"key": "Accept",
-										"value": "text/plain"
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer <token>",
+										"description": "Added as a part of security scheme: bearer"
 									}
 								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": \"string\",\n  \"date\": \"1963-09-06T23:50:11.183Z\",\n  \"totalPrice\": 2908.1821466659585,\n  \"totalScore\": 6016.662422102411,\n  \"photo\": \"string\",\n  \"userId\": \"string\",\n  \"establishmentId\": \"string\",\n  \"establishment\": {\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"creationDate\": \"1997-06-13T17:24:24.426Z\",\n    \"location\": \"string\",\n    \"isOpen\": true,\n    \"score\": 4333.594860831905\n  },\n  \"products\": [\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"date\": \"1956-08-05T15:39:22.735Z\",\n      \"price\": 4357.573029482062,\n      \"score\": 9407.269586634036,\n      \"publicationId\": \"string\"\n    },\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"date\": \"1994-04-30T22:47:12.656Z\",\n      \"price\": 9624.690318342664,\n      \"score\": 1550.8071234795973,\n      \"publicationId\": \"string\"\n    }\n  ]\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
 								"url": {
-									"raw": "{{baseUrl}}/api/Publications/establishment/:id",
+									"raw": "{{baseUrl}}/api/Publications/:id",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
 										"api",
 										"Publications",
-										"establishment",
 										":id"
 									],
 									"variable": [
 										{
-											"key": "id",
-											"value": "9978",
-											"description": "(Required) "
+											"key": "id"
 										}
 									]
 								}
 							},
-							"response": [
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
 								{
-									"name": "OK",
-									"originalRequest": {
-										"method": "GET",
-										"header": [
-											{
-												"key": "Accept",
-												"value": "text/plain"
-											},
-											{
-												"key": "Authorization",
-												"value": "Bearer <token>",
-												"description": "Added as a part of security scheme: bearer"
-											}
-										],
-										"url": {
-											"raw": "{{baseUrl}}/api/Publications/establishment/:id",
-											"host": [
-												"{{baseUrl}}"
-											],
-											"path": [
-												"api",
-												"Publications",
-												"establishment",
-												":id"
-											],
-											"variable": [
-												{
-													"key": "id"
-												}
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Content-Type",
-											"value": "application/json"
-										}
-									],
-									"cookie": [],
-									"body": "[\n  {\n    \"id\": 4168,\n    \"date\": \"2023-01-10T09:14:33.643Z\",\n    \"totalPrice\": 6798.255555434517,\n    \"totalScore\": 2351.113394676393,\n    \"photo\": \"string\",\n    \"userId\": 6862,\n    \"establishmentId\": 2115,\n    \"establishment\": {\n      \"id\": 5557,\n      \"name\": \"string\",\n      \"creationDate\": \"1979-05-19T08:10:38.825Z\",\n      \"location\": \"string\",\n      \"isOpen\": false,\n      \"score\": 992.203103121555\n    },\n    \"products\": [\n      {\n        \"id\": 2471,\n        \"name\": \"string\",\n        \"date\": \"2009-02-05T03:25:59.272Z\",\n        \"price\": 309.0640654348986,\n        \"score\": 198.30025165578414,\n        \"publicationId\": 2155\n      },\n      {\n        \"id\": 3562,\n        \"name\": \"string\",\n        \"date\": \"2011-05-08T18:50:41.397Z\",\n        \"price\": 6899.589567208698,\n        \"score\": 7520.8554120045,\n        \"publicationId\": 7482\n      }\n    ]\n  },\n  {\n    \"id\": 3275,\n    \"date\": \"1975-01-08T06:50:34.150Z\",\n    \"totalPrice\": 1081.697360560192,\n    \"totalScore\": 1642.7463379365681,\n    \"photo\": \"string\",\n    \"userId\": 930,\n    \"establishmentId\": 8740,\n    \"establishment\": {\n      \"id\": 4455,\n      \"name\": \"string\",\n      \"creationDate\": \"1967-02-16T11:24:56.556Z\",\n      \"location\": \"string\",\n      \"isOpen\": false,\n      \"score\": 6430.681253575196\n    },\n    \"products\": [\n      {\n        \"id\": 5434,\n        \"name\": \"string\",\n        \"date\": \"1997-06-16T18:53:22.264Z\",\n        \"price\": 2059.8012884164827,\n        \"score\": 8664.135187922218,\n        \"publicationId\": 7303\n      },\n      {\n        \"id\": 7953,\n        \"name\": \"string\",\n        \"date\": \"1946-04-10T06:11:37.385Z\",\n        \"price\": 9152.047295732982,\n        \"score\": 9914.143838399501,\n        \"publicationId\": 524\n      }\n    ]\n  }\n]"
+									"key": "Content-Type",
+									"value": "application/json"
 								}
-							]
+							],
+							"cookie": [],
+							"body": "{\n  \"message\": \"string\"\n}"
 						},
 						{
-							"name": "/api/Publications/score",
-							"request": {
-								"method": "GET",
+							"name": "Internal Server Error",
+							"originalRequest": {
+								"method": "PUT",
 								"header": [
 									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
 										"key": "Accept",
-										"value": "text/plain"
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer <token>",
+										"description": "Added as a part of security scheme: bearer"
 									}
 								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": \"string\",\n  \"date\": \"1963-09-06T23:50:11.183Z\",\n  \"totalPrice\": 2908.1821466659585,\n  \"totalScore\": 6016.662422102411,\n  \"photo\": \"string\",\n  \"userId\": \"string\",\n  \"establishmentId\": \"string\",\n  \"establishment\": {\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"creationDate\": \"1997-06-13T17:24:24.426Z\",\n    \"location\": \"string\",\n    \"isOpen\": true,\n    \"score\": 4333.594860831905\n  },\n  \"products\": [\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"date\": \"1956-08-05T15:39:22.735Z\",\n      \"price\": 4357.573029482062,\n      \"score\": 9407.269586634036,\n      \"publicationId\": \"string\"\n    },\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"date\": \"1994-04-30T22:47:12.656Z\",\n      \"price\": 9624.690318342664,\n      \"score\": 1550.8071234795973,\n      \"publicationId\": \"string\"\n    }\n  ]\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
 								"url": {
-									"raw": "{{baseUrl}}/api/Publications/score?minScore=5661.647328841373&maxScore=5661.647328841373",
+									"raw": "{{baseUrl}}/api/Publications/:id",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
 										"api",
 										"Publications",
-										"score"
+										":id"
 									],
-									"query": [
+									"variable": [
 										{
-											"key": "minScore",
-											"value": "5661.647328841373"
-										},
-										{
-											"key": "maxScore",
-											"value": "5661.647328841373"
+											"key": "id"
 										}
 									]
 								}
 							},
-							"response": [
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
 								{
-									"name": "OK",
-									"originalRequest": {
-										"method": "GET",
-										"header": [
-											{
-												"key": "Accept",
-												"value": "text/plain"
-											},
-											{
-												"key": "Authorization",
-												"value": "Bearer <token>",
-												"description": "Added as a part of security scheme: bearer"
-											}
-										],
-										"url": {
-											"raw": "{{baseUrl}}/api/Publications/score?minScore=5661.647328841373&maxScore=5661.647328841373",
-											"host": [
-												"{{baseUrl}}"
-											],
-											"path": [
-												"api",
-												"Publications",
-												"score"
-											],
-											"query": [
-												{
-													"key": "minScore",
-													"value": "5661.647328841373"
-												},
-												{
-													"key": "maxScore",
-													"value": "5661.647328841373"
-												}
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Content-Type",
-											"value": "application/json"
-										}
-									],
-									"cookie": [],
-									"body": "[\n  {\n    \"id\": 4168,\n    \"date\": \"2023-01-10T09:14:33.643Z\",\n    \"totalPrice\": 6798.255555434517,\n    \"totalScore\": 2351.113394676393,\n    \"photo\": \"string\",\n    \"userId\": 6862,\n    \"establishmentId\": 2115,\n    \"establishment\": {\n      \"id\": 5557,\n      \"name\": \"string\",\n      \"creationDate\": \"1979-05-19T08:10:38.825Z\",\n      \"location\": \"string\",\n      \"isOpen\": false,\n      \"score\": 992.203103121555\n    },\n    \"products\": [\n      {\n        \"id\": 2471,\n        \"name\": \"string\",\n        \"date\": \"2009-02-05T03:25:59.272Z\",\n        \"price\": 309.0640654348986,\n        \"score\": 198.30025165578414,\n        \"publicationId\": 2155\n      },\n      {\n        \"id\": 3562,\n        \"name\": \"string\",\n        \"date\": \"2011-05-08T18:50:41.397Z\",\n        \"price\": 6899.589567208698,\n        \"score\": 7520.8554120045,\n        \"publicationId\": 7482\n      }\n    ]\n  },\n  {\n    \"id\": 3275,\n    \"date\": \"1975-01-08T06:50:34.150Z\",\n    \"totalPrice\": 1081.697360560192,\n    \"totalScore\": 1642.7463379365681,\n    \"photo\": \"string\",\n    \"userId\": 930,\n    \"establishmentId\": 8740,\n    \"establishment\": {\n      \"id\": 4455,\n      \"name\": \"string\",\n      \"creationDate\": \"1967-02-16T11:24:56.556Z\",\n      \"location\": \"string\",\n      \"isOpen\": false,\n      \"score\": 6430.681253575196\n    },\n    \"products\": [\n      {\n        \"id\": 5434,\n        \"name\": \"string\",\n        \"date\": \"1997-06-16T18:53:22.264Z\",\n        \"price\": 2059.8012884164827,\n        \"score\": 8664.135187922218,\n        \"publicationId\": 7303\n      },\n      {\n        \"id\": 7953,\n        \"name\": \"string\",\n        \"date\": \"1946-04-10T06:11:37.385Z\",\n        \"price\": 9152.047295732982,\n        \"score\": 9914.143838399501,\n        \"publicationId\": 524\n      }\n    ]\n  }\n]"
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"message\": \"string\"\n}"
+						}
+					]
+				},
+				{
+					"name": "/api/Publications/:id",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/Publications/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"Publications",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "string",
+									"description": "(Required) "
 								}
 							]
-						},
+						}
+					},
+					"response": [
 						{
-							"name": "/api/Publications/price",
-							"request": {
-								"method": "GET",
+							"name": "No Content",
+							"originalRequest": {
+								"method": "DELETE",
 								"header": [
 									{
-										"key": "Accept",
-										"value": "text/plain"
+										"key": "Authorization",
+										"value": "Bearer <token>",
+										"description": "Added as a part of security scheme: bearer"
 									}
 								],
 								"url": {
-									"raw": "{{baseUrl}}/api/Publications/price?minPrice=5661.647328841373&maxPrice=5661.647328841373",
+									"raw": "{{baseUrl}}/api/Publications/:id",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
 										"api",
 										"Publications",
-										"price"
+										":id"
 									],
-									"query": [
+									"variable": [
 										{
-											"key": "minPrice",
-											"value": "5661.647328841373"
-										},
-										{
-											"key": "maxPrice",
-											"value": "5661.647328841373"
+											"key": "id"
 										}
 									]
 								}
 							},
-							"response": [
-								{
-									"name": "OK",
-									"originalRequest": {
-										"method": "GET",
-										"header": [
-											{
-												"key": "Accept",
-												"value": "text/plain"
-											},
-											{
-												"key": "Authorization",
-												"value": "Bearer <token>",
-												"description": "Added as a part of security scheme: bearer"
-											}
-										],
-										"url": {
-											"raw": "{{baseUrl}}/api/Publications/price?minPrice=5661.647328841373&maxPrice=5661.647328841373",
-											"host": [
-												"{{baseUrl}}"
-											],
-											"path": [
-												"api",
-												"Publications",
-												"price"
-											],
-											"query": [
-												{
-													"key": "minPrice",
-													"value": "5661.647328841373"
-												},
-												{
-													"key": "maxPrice",
-													"value": "5661.647328841373"
-												}
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Content-Type",
-											"value": "application/json"
-										}
-									],
-									"cookie": [],
-									"body": "[\n  {\n    \"id\": 4168,\n    \"date\": \"2023-01-10T09:14:33.643Z\",\n    \"totalPrice\": 6798.255555434517,\n    \"totalScore\": 2351.113394676393,\n    \"photo\": \"string\",\n    \"userId\": 6862,\n    \"establishmentId\": 2115,\n    \"establishment\": {\n      \"id\": 5557,\n      \"name\": \"string\",\n      \"creationDate\": \"1979-05-19T08:10:38.825Z\",\n      \"location\": \"string\",\n      \"isOpen\": false,\n      \"score\": 992.203103121555\n    },\n    \"products\": [\n      {\n        \"id\": 2471,\n        \"name\": \"string\",\n        \"date\": \"2009-02-05T03:25:59.272Z\",\n        \"price\": 309.0640654348986,\n        \"score\": 198.30025165578414,\n        \"publicationId\": 2155\n      },\n      {\n        \"id\": 3562,\n        \"name\": \"string\",\n        \"date\": \"2011-05-08T18:50:41.397Z\",\n        \"price\": 6899.589567208698,\n        \"score\": 7520.8554120045,\n        \"publicationId\": 7482\n      }\n    ]\n  },\n  {\n    \"id\": 3275,\n    \"date\": \"1975-01-08T06:50:34.150Z\",\n    \"totalPrice\": 1081.697360560192,\n    \"totalScore\": 1642.7463379365681,\n    \"photo\": \"string\",\n    \"userId\": 930,\n    \"establishmentId\": 8740,\n    \"establishment\": {\n      \"id\": 4455,\n      \"name\": \"string\",\n      \"creationDate\": \"1967-02-16T11:24:56.556Z\",\n      \"location\": \"string\",\n      \"isOpen\": false,\n      \"score\": 6430.681253575196\n    },\n    \"products\": [\n      {\n        \"id\": 5434,\n        \"name\": \"string\",\n        \"date\": \"1997-06-16T18:53:22.264Z\",\n        \"price\": 2059.8012884164827,\n        \"score\": 8664.135187922218,\n        \"publicationId\": 7303\n      },\n      {\n        \"id\": 7953,\n        \"name\": \"string\",\n        \"date\": \"1946-04-10T06:11:37.385Z\",\n        \"price\": 9152.047295732982,\n        \"score\": 9914.143838399501,\n        \"publicationId\": 524\n      }\n    ]\n  }\n]"
-								}
-							]
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "text",
+							"header": [],
+							"cookie": [],
+							"body": ""
 						},
 						{
-							"name": "/api/Publications/user/:id",
-							"request": {
+							"name": "Not Found",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer <token>",
+										"description": "Added as a part of security scheme: bearer"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/Publications/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Publications",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"message\": \"string\"\n}"
+						},
+						{
+							"name": "Internal Server Error",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer <token>",
+										"description": "Added as a part of security scheme: bearer"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/Publications/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Publications",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"message\": \"string\"\n}"
+						}
+					]
+				},
+				{
+					"name": "/api/Publications/user/:id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/Publications/user/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"Publications",
+								"user",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "string",
+									"description": "(Required) "
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
 								"method": "GET",
 								"header": [
 									{
 										"key": "Accept",
-										"value": "text/plain"
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer <token>",
+										"description": "Added as a part of security scheme: bearer"
 									}
 								],
 								"url": {
@@ -1848,74 +3445,499 @@
 									],
 									"variable": [
 										{
-											"key": "id",
-											"value": "9978",
-											"description": "(Required) "
+											"key": "id"
 										}
 									]
 								}
 							},
-							"response": [
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
 								{
-									"name": "OK",
-									"originalRequest": {
-										"method": "GET",
-										"header": [
-											{
-												"key": "Accept",
-												"value": "text/plain"
-											},
-											{
-												"key": "Authorization",
-												"value": "Bearer <token>",
-												"description": "Added as a part of security scheme: bearer"
-											}
-										],
-										"url": {
-											"raw": "{{baseUrl}}/api/Publications/user/:id",
-											"host": [
-												"{{baseUrl}}"
-											],
-											"path": [
-												"api",
-												"Publications",
-												"user",
-												":id"
-											],
-											"variable": [
-												{
-													"key": "id"
-												}
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Content-Type",
-											"value": "application/json"
-										}
-									],
-									"cookie": [],
-									"body": "[\n  {\n    \"id\": 4168,\n    \"date\": \"2023-01-10T09:14:33.643Z\",\n    \"totalPrice\": 6798.255555434517,\n    \"totalScore\": 2351.113394676393,\n    \"photo\": \"string\",\n    \"userId\": 6862,\n    \"establishmentId\": 2115,\n    \"establishment\": {\n      \"id\": 5557,\n      \"name\": \"string\",\n      \"creationDate\": \"1979-05-19T08:10:38.825Z\",\n      \"location\": \"string\",\n      \"isOpen\": false,\n      \"score\": 992.203103121555\n    },\n    \"products\": [\n      {\n        \"id\": 2471,\n        \"name\": \"string\",\n        \"date\": \"2009-02-05T03:25:59.272Z\",\n        \"price\": 309.0640654348986,\n        \"score\": 198.30025165578414,\n        \"publicationId\": 2155\n      },\n      {\n        \"id\": 3562,\n        \"name\": \"string\",\n        \"date\": \"2011-05-08T18:50:41.397Z\",\n        \"price\": 6899.589567208698,\n        \"score\": 7520.8554120045,\n        \"publicationId\": 7482\n      }\n    ]\n  },\n  {\n    \"id\": 3275,\n    \"date\": \"1975-01-08T06:50:34.150Z\",\n    \"totalPrice\": 1081.697360560192,\n    \"totalScore\": 1642.7463379365681,\n    \"photo\": \"string\",\n    \"userId\": 930,\n    \"establishmentId\": 8740,\n    \"establishment\": {\n      \"id\": 4455,\n      \"name\": \"string\",\n      \"creationDate\": \"1967-02-16T11:24:56.556Z\",\n      \"location\": \"string\",\n      \"isOpen\": false,\n      \"score\": 6430.681253575196\n    },\n    \"products\": [\n      {\n        \"id\": 5434,\n        \"name\": \"string\",\n        \"date\": \"1997-06-16T18:53:22.264Z\",\n        \"price\": 2059.8012884164827,\n        \"score\": 8664.135187922218,\n        \"publicationId\": 7303\n      },\n      {\n        \"id\": 7953,\n        \"name\": \"string\",\n        \"date\": \"1946-04-10T06:11:37.385Z\",\n        \"price\": 9152.047295732982,\n        \"score\": 9914.143838399501,\n        \"publicationId\": 524\n      }\n    ]\n  }\n]"
+									"key": "Content-Type",
+									"value": "application/json"
 								}
-							]
-						}
-					]
-				},
-				{
-					"name": "Users",
-					"item": [
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"date\": \"2021-08-26T22:07:42.666Z\",\n    \"price\": 3251.774694474333,\n    \"score\": 3610.9312559550144,\n    \"publicationId\": \"string\"\n  },\n  {\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"date\": \"2017-01-20T21:20:55.979Z\",\n    \"price\": 7397.604209455213,\n    \"score\": 5205.469206572814,\n    \"publicationId\": \"string\"\n  }\n]"
+						},
 						{
-							"name": "/api/Users",
-							"request": {
+							"name": "Internal Server Error",
+							"originalRequest": {
 								"method": "GET",
 								"header": [
 									{
 										"key": "Accept",
-										"value": "text/plain"
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer <token>",
+										"description": "Added as a part of security scheme: bearer"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/Publications/user/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Publications",
+										"user",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"message\": \"string\"\n}"
+						}
+					]
+				},
+				{
+					"name": "/api/Publications/establishment/:id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/Publications/establishment/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"Publications",
+								"establishment",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "string",
+									"description": "(Required) "
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer <token>",
+										"description": "Added as a part of security scheme: bearer"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/Publications/establishment/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Publications",
+										"establishment",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"date\": \"2021-08-26T22:07:42.666Z\",\n    \"price\": 3251.774694474333,\n    \"score\": 3610.9312559550144,\n    \"publicationId\": \"string\"\n  },\n  {\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"date\": \"2017-01-20T21:20:55.979Z\",\n    \"price\": 7397.604209455213,\n    \"score\": 5205.469206572814,\n    \"publicationId\": \"string\"\n  }\n]"
+						},
+						{
+							"name": "Internal Server Error",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer <token>",
+										"description": "Added as a part of security scheme: bearer"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/Publications/establishment/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Publications",
+										"establishment",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"message\": \"string\"\n}"
+						}
+					]
+				},
+				{
+					"name": "/api/Publications/score",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/Publications/score?minScore=6866.4279326330625&maxScore=6866.4279326330625",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"Publications",
+								"score"
+							],
+							"query": [
+								{
+									"key": "minScore",
+									"value": "6866.4279326330625"
+								},
+								{
+									"key": "maxScore",
+									"value": "6866.4279326330625"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer <token>",
+										"description": "Added as a part of security scheme: bearer"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/Publications/score?minScore=6866.4279326330625&maxScore=6866.4279326330625",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Publications",
+										"score"
+									],
+									"query": [
+										{
+											"key": "minScore",
+											"value": "6866.4279326330625"
+										},
+										{
+											"key": "maxScore",
+											"value": "6866.4279326330625"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"date\": \"2021-08-26T22:07:42.666Z\",\n    \"price\": 3251.774694474333,\n    \"score\": 3610.9312559550144,\n    \"publicationId\": \"string\"\n  },\n  {\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"date\": \"2017-01-20T21:20:55.979Z\",\n    \"price\": 7397.604209455213,\n    \"score\": 5205.469206572814,\n    \"publicationId\": \"string\"\n  }\n]"
+						},
+						{
+							"name": "Internal Server Error",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer <token>",
+										"description": "Added as a part of security scheme: bearer"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/Publications/score?minScore=6866.4279326330625&maxScore=6866.4279326330625",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Publications",
+										"score"
+									],
+									"query": [
+										{
+											"key": "minScore",
+											"value": "6866.4279326330625"
+										},
+										{
+											"key": "maxScore",
+											"value": "6866.4279326330625"
+										}
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"message\": \"string\"\n}"
+						}
+					]
+				},
+				{
+					"name": "/api/Publications/price",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/Publications/price?minPrice=6866.4279326330625&maxPrice=6866.4279326330625",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"Publications",
+								"price"
+							],
+							"query": [
+								{
+									"key": "minPrice",
+									"value": "6866.4279326330625"
+								},
+								{
+									"key": "maxPrice",
+									"value": "6866.4279326330625"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer <token>",
+										"description": "Added as a part of security scheme: bearer"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/Publications/price?minPrice=6866.4279326330625&maxPrice=6866.4279326330625",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Publications",
+										"price"
+									],
+									"query": [
+										{
+											"key": "minPrice",
+											"value": "6866.4279326330625"
+										},
+										{
+											"key": "maxPrice",
+											"value": "6866.4279326330625"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"date\": \"2021-08-26T22:07:42.666Z\",\n    \"price\": 3251.774694474333,\n    \"score\": 3610.9312559550144,\n    \"publicationId\": \"string\"\n  },\n  {\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"date\": \"2017-01-20T21:20:55.979Z\",\n    \"price\": 7397.604209455213,\n    \"score\": 5205.469206572814,\n    \"publicationId\": \"string\"\n  }\n]"
+						},
+						{
+							"name": "Internal Server Error",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer <token>",
+										"description": "Added as a part of security scheme: bearer"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/Publications/price?minPrice=6866.4279326330625&maxPrice=6866.4279326330625",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Publications",
+										"price"
+									],
+									"query": [
+										{
+											"key": "minPrice",
+											"value": "6866.4279326330625"
+										},
+										{
+											"key": "maxPrice",
+											"value": "6866.4279326330625"
+										}
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"message\": \"string\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "/api/Users",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/Users",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"Users"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer <token>",
+										"description": "Added as a part of security scheme: bearer"
 									}
 								],
 								"url": {
@@ -1929,50 +3951,97 @@
 									]
 								}
 							},
-							"response": [
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
 								{
-									"name": "OK",
-									"originalRequest": {
-										"method": "GET",
-										"header": [
-											{
-												"key": "Accept",
-												"value": "text/plain"
-											},
-											{
-												"key": "Authorization",
-												"value": "Bearer <token>",
-												"description": "Added as a part of security scheme: bearer"
-											}
-										],
-										"url": {
-											"raw": "{{baseUrl}}/api/Users",
-											"host": [
-												"{{baseUrl}}"
-											],
-											"path": [
-												"api",
-												"Users"
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Content-Type",
-											"value": "application/json"
-										}
-									],
-									"cookie": [],
-									"body": "[\n  {\n    \"id\": 2630,\n    \"username\": \"string\",\n    \"name\": \"string\",\n    \"surname\": \"string\",\n    \"birthDate\": \"2017-05-30T20:40:28.212Z\",\n    \"email\": \"string\",\n    \"password\": \"string\",\n    \"creationDate\": \"2011-10-13T00:01:24.761Z\",\n    \"active\": true,\n    \"moneySpent\": 8593.949278531056,\n    \"publicationsNumber\": 3257,\n    \"role\": \"string\"\n  },\n  {\n    \"id\": 9081,\n    \"username\": \"string\",\n    \"name\": \"string\",\n    \"surname\": \"string\",\n    \"birthDate\": \"2010-04-29T15:34:15.983Z\",\n    \"email\": \"string\",\n    \"password\": \"string\",\n    \"creationDate\": \"1953-08-05T18:02:27.354Z\",\n    \"active\": false,\n    \"moneySpent\": 2321.498634158211,\n    \"publicationsNumber\": 9802,\n    \"role\": \"string\"\n  }\n]"
+									"key": "Content-Type",
+									"value": "application/json"
 								}
-							]
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"id\": \"string\",\n    \"username\": \"string\",\n    \"name\": \"string\",\n    \"surname\": \"string\",\n    \"birthDate\": \"2009-05-15T12:29:28.517Z\",\n    \"email\": \"string\",\n    \"password\": \"string\",\n    \"creationDate\": \"1947-10-24T14:36:26.594Z\",\n    \"active\": false,\n    \"moneySpent\": 5174.134058806413,\n    \"publicationsNumber\": 6237,\n    \"role\": \"string\"\n  },\n  {\n    \"id\": \"string\",\n    \"username\": \"string\",\n    \"name\": \"string\",\n    \"surname\": \"string\",\n    \"birthDate\": \"2011-09-13T06:43:20.833Z\",\n    \"email\": \"string\",\n    \"password\": \"string\",\n    \"creationDate\": \"2006-09-03T23:45:04.768Z\",\n    \"active\": true,\n    \"moneySpent\": 6523.012936827063,\n    \"publicationsNumber\": 6907,\n    \"role\": \"string\"\n  }\n]"
 						},
 						{
-							"name": "/api/Users",
-							"request": {
+							"name": "Internal Server Error",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer <token>",
+										"description": "Added as a part of security scheme: bearer"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/Users",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Users"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"message\": \"string\"\n}"
+						}
+					]
+				},
+				{
+					"name": "/api/Users",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": \"string\",\n  \"username\": \"string\",\n  \"name\": \"string\",\n  \"surname\": \"string\",\n  \"birthDate\": \"1974-01-15T15:06:02.807Z\",\n  \"email\": \"string\",\n  \"password\": \"string\",\n  \"creationDate\": \"1950-04-04T16:49:48.224Z\",\n  \"active\": false,\n  \"moneySpent\": 9864.80425110991,\n  \"publicationsNumber\": 9009,\n  \"role\": \"string\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/Users",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"Users"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Created",
+							"originalRequest": {
 								"method": "POST",
 								"header": [
 									{
@@ -1981,12 +4050,17 @@
 									},
 									{
 										"key": "Accept",
-										"value": "text/plain"
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer <token>",
+										"description": "Added as a part of security scheme: bearer"
 									}
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"id\": 105,\n  \"username\": \"string\",\n  \"name\": \"string\",\n  \"surname\": \"string\",\n  \"birthDate\": \"1989-09-21T12:30:06.974Z\",\n  \"email\": \"string\",\n  \"password\": \"string\",\n  \"creationDate\": \"2001-08-27T04:02:30.966Z\",\n  \"active\": true,\n  \"moneySpent\": 6199.408528562315,\n  \"publicationsNumber\": 2316,\n  \"role\": \"string\"\n}",
+									"raw": "{\n  \"id\": \"string\",\n  \"username\": \"string\",\n  \"name\": \"string\",\n  \"surname\": \"string\",\n  \"birthDate\": \"1974-01-15T15:06:02.807Z\",\n  \"email\": \"string\",\n  \"password\": \"string\",\n  \"creationDate\": \"1950-04-04T16:49:48.224Z\",\n  \"active\": false,\n  \"moneySpent\": 9864.80425110991,\n  \"publicationsNumber\": 9009,\n  \"role\": \"string\"\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -2005,69 +4079,115 @@
 									]
 								}
 							},
-							"response": [
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
 								{
-									"name": "OK",
-									"originalRequest": {
-										"method": "POST",
-										"header": [
-											{
-												"key": "Content-Type",
-												"value": "application/json"
-											},
-											{
-												"key": "Accept",
-												"value": "text/plain"
-											},
-											{
-												"key": "Authorization",
-												"value": "Bearer <token>",
-												"description": "Added as a part of security scheme: bearer"
-											}
-										],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n  \"id\": 105,\n  \"username\": \"string\",\n  \"name\": \"string\",\n  \"surname\": \"string\",\n  \"birthDate\": \"1989-09-21T12:30:06.974Z\",\n  \"email\": \"string\",\n  \"password\": \"string\",\n  \"creationDate\": \"2001-08-27T04:02:30.966Z\",\n  \"active\": true,\n  \"moneySpent\": 6199.408528562315,\n  \"publicationsNumber\": 2316,\n  \"role\": \"string\"\n}",
-											"options": {
-												"raw": {
-													"headerFamily": "json",
-													"language": "json"
-												}
-											}
-										},
-										"url": {
-											"raw": "{{baseUrl}}/api/Users",
-											"host": [
-												"{{baseUrl}}"
-											],
-											"path": [
-												"api",
-												"Users"
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Content-Type",
-											"value": "application/json"
-										}
-									],
-									"cookie": [],
-									"body": "{\n  \"id\": 105,\n  \"username\": \"string\",\n  \"name\": \"string\",\n  \"surname\": \"string\",\n  \"birthDate\": \"1989-09-21T12:30:06.974Z\",\n  \"email\": \"string\",\n  \"password\": \"string\",\n  \"creationDate\": \"2001-08-27T04:02:30.966Z\",\n  \"active\": true,\n  \"moneySpent\": 6199.408528562315,\n  \"publicationsNumber\": 2316,\n  \"role\": \"string\"\n}"
+									"key": "Content-Type",
+									"value": "application/json"
 								}
-							]
+							],
+							"cookie": [],
+							"body": "{\n  \"id\": \"string\",\n  \"username\": \"string\",\n  \"name\": \"string\",\n  \"surname\": \"string\",\n  \"birthDate\": \"1974-01-15T15:06:02.807Z\",\n  \"email\": \"string\",\n  \"password\": \"string\",\n  \"creationDate\": \"1950-04-04T16:49:48.224Z\",\n  \"active\": false,\n  \"moneySpent\": 9864.80425110991,\n  \"publicationsNumber\": 9009,\n  \"role\": \"string\"\n}"
 						},
 						{
-							"name": "/api/Users/:id",
-							"request": {
+							"name": "Internal Server Error",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer <token>",
+										"description": "Added as a part of security scheme: bearer"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": \"string\",\n  \"username\": \"string\",\n  \"name\": \"string\",\n  \"surname\": \"string\",\n  \"birthDate\": \"1974-01-15T15:06:02.807Z\",\n  \"email\": \"string\",\n  \"password\": \"string\",\n  \"creationDate\": \"1950-04-04T16:49:48.224Z\",\n  \"active\": false,\n  \"moneySpent\": 9864.80425110991,\n  \"publicationsNumber\": 9009,\n  \"role\": \"string\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/Users",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Users"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"message\": \"string\"\n}"
+						}
+					]
+				},
+				{
+					"name": "/api/Users/:id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/Users/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"Users",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "string",
+									"description": "(Required) "
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
 								"method": "GET",
 								"header": [
 									{
 										"key": "Accept",
-										"value": "text/plain"
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer <token>",
+										"description": "Added as a part of security scheme: bearer"
 									}
 								],
 								"url": {
@@ -2082,73 +4202,175 @@
 									],
 									"variable": [
 										{
-											"key": "id",
-											"value": "9978",
-											"description": "(Required) "
+											"key": "id"
 										}
 									]
 								}
 							},
-							"response": [
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
 								{
-									"name": "OK",
-									"originalRequest": {
-										"method": "GET",
-										"header": [
-											{
-												"key": "Accept",
-												"value": "text/plain"
-											},
-											{
-												"key": "Authorization",
-												"value": "Bearer <token>",
-												"description": "Added as a part of security scheme: bearer"
-											}
-										],
-										"url": {
-											"raw": "{{baseUrl}}/api/Users/:id",
-											"host": [
-												"{{baseUrl}}"
-											],
-											"path": [
-												"api",
-												"Users",
-												":id"
-											],
-											"variable": [
-												{
-													"key": "id"
-												}
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Content-Type",
-											"value": "application/json"
-										}
-									],
-									"cookie": [],
-									"body": "{\n  \"id\": 105,\n  \"username\": \"string\",\n  \"name\": \"string\",\n  \"surname\": \"string\",\n  \"birthDate\": \"1989-09-21T12:30:06.974Z\",\n  \"email\": \"string\",\n  \"password\": \"string\",\n  \"creationDate\": \"2001-08-27T04:02:30.966Z\",\n  \"active\": true,\n  \"moneySpent\": 6199.408528562315,\n  \"publicationsNumber\": 2316,\n  \"role\": \"string\"\n}"
+									"key": "Content-Type",
+									"value": "application/json"
 								}
-							]
+							],
+							"cookie": [],
+							"body": "{\n  \"id\": \"string\",\n  \"username\": \"string\",\n  \"name\": \"string\",\n  \"surname\": \"string\",\n  \"birthDate\": \"1974-01-15T15:06:02.807Z\",\n  \"email\": \"string\",\n  \"password\": \"string\",\n  \"creationDate\": \"1950-04-04T16:49:48.224Z\",\n  \"active\": false,\n  \"moneySpent\": 9864.80425110991,\n  \"publicationsNumber\": 9009,\n  \"role\": \"string\"\n}"
 						},
 						{
-							"name": "/api/Users/:id",
-							"request": {
+							"name": "Not Found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer <token>",
+										"description": "Added as a part of security scheme: bearer"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/Users/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Users",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"message\": \"string\"\n}"
+						},
+						{
+							"name": "Internal Server Error",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer <token>",
+										"description": "Added as a part of security scheme: bearer"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/Users/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Users",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"message\": \"string\"\n}"
+						}
+					]
+				},
+				{
+					"name": "/api/Users/:id",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": \"string\",\n  \"username\": \"string\",\n  \"name\": \"string\",\n  \"surname\": \"string\",\n  \"birthDate\": \"1974-01-15T15:06:02.807Z\",\n  \"email\": \"string\",\n  \"password\": \"string\",\n  \"creationDate\": \"1950-04-04T16:49:48.224Z\",\n  \"active\": false,\n  \"moneySpent\": 9864.80425110991,\n  \"publicationsNumber\": 9009,\n  \"role\": \"string\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/Users/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"Users",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "string",
+									"description": "(Required) "
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "No Content",
+							"originalRequest": {
 								"method": "PUT",
 								"header": [
 									{
 										"key": "Content-Type",
 										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer <token>",
+										"description": "Added as a part of security scheme: bearer"
 									}
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"id\": 105,\n  \"username\": \"string\",\n  \"name\": \"string\",\n  \"surname\": \"string\",\n  \"birthDate\": \"1989-09-21T12:30:06.974Z\",\n  \"email\": \"string\",\n  \"password\": \"string\",\n  \"creationDate\": \"2001-08-27T04:02:30.966Z\",\n  \"active\": true,\n  \"moneySpent\": 6199.408528562315,\n  \"publicationsNumber\": 2316,\n  \"role\": \"string\"\n}",
+									"raw": "{\n  \"id\": \"string\",\n  \"username\": \"string\",\n  \"name\": \"string\",\n  \"surname\": \"string\",\n  \"birthDate\": \"1974-01-15T15:06:02.807Z\",\n  \"email\": \"string\",\n  \"password\": \"string\",\n  \"creationDate\": \"1950-04-04T16:49:48.224Z\",\n  \"active\": false,\n  \"moneySpent\": 9864.80425110991,\n  \"publicationsNumber\": 9009,\n  \"role\": \"string\"\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -2168,70 +4390,47 @@
 									],
 									"variable": [
 										{
-											"key": "id",
-											"value": "9978",
-											"description": "(Required) "
+											"key": "id"
 										}
 									]
 								}
 							},
-							"response": [
-								{
-									"name": "OK",
-									"originalRequest": {
-										"method": "PUT",
-										"header": [
-											{
-												"key": "Content-Type",
-												"value": "application/json"
-											},
-											{
-												"key": "Authorization",
-												"value": "Bearer <token>",
-												"description": "Added as a part of security scheme: bearer"
-											}
-										],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n  \"id\": 105,\n  \"username\": \"string\",\n  \"name\": \"string\",\n  \"surname\": \"string\",\n  \"birthDate\": \"1989-09-21T12:30:06.974Z\",\n  \"email\": \"string\",\n  \"password\": \"string\",\n  \"creationDate\": \"2001-08-27T04:02:30.966Z\",\n  \"active\": true,\n  \"moneySpent\": 6199.408528562315,\n  \"publicationsNumber\": 2316,\n  \"role\": \"string\"\n}",
-											"options": {
-												"raw": {
-													"headerFamily": "json",
-													"language": "json"
-												}
-											}
-										},
-										"url": {
-											"raw": "{{baseUrl}}/api/Users/:id",
-											"host": [
-												"{{baseUrl}}"
-											],
-											"path": [
-												"api",
-												"Users",
-												":id"
-											],
-											"variable": [
-												{
-													"key": "id"
-												}
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "text",
-									"header": [],
-									"cookie": [],
-									"body": ""
-								}
-							]
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "text",
+							"header": [],
+							"cookie": [],
+							"body": ""
 						},
 						{
-							"name": "/api/Users/:id",
-							"request": {
-								"method": "DELETE",
-								"header": [],
+							"name": "Bad Request",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer <token>",
+										"description": "Added as a part of security scheme: bearer"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": \"string\",\n  \"username\": \"string\",\n  \"name\": \"string\",\n  \"surname\": \"string\",\n  \"birthDate\": \"1974-01-15T15:06:02.807Z\",\n  \"email\": \"string\",\n  \"password\": \"string\",\n  \"creationDate\": \"1950-04-04T16:49:48.224Z\",\n  \"active\": false,\n  \"moneySpent\": 9864.80425110991,\n  \"publicationsNumber\": 9009,\n  \"role\": \"string\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
 								"url": {
 									"raw": "{{baseUrl}}/api/Users/:id",
 									"host": [
@@ -2244,50 +4443,293 @@
 									],
 									"variable": [
 										{
-											"key": "id",
-											"value": "9978",
-											"description": "(Required) "
+											"key": "id"
 										}
 									]
 								}
 							},
-							"response": [
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
 								{
-									"name": "OK",
-									"originalRequest": {
-										"method": "DELETE",
-										"header": [
-											{
-												"key": "Authorization",
-												"value": "Bearer <token>",
-												"description": "Added as a part of security scheme: bearer"
-											}
-										],
-										"url": {
-											"raw": "{{baseUrl}}/api/Users/:id",
-											"host": [
-												"{{baseUrl}}"
-											],
-											"path": [
-												"api",
-												"Users",
-												":id"
-											],
-											"variable": [
-												{
-													"key": "id"
-												}
-											]
-										}
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"message\": \"string\"\n}"
+						},
+						{
+							"name": "Not Found",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
 									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "text",
-									"header": [],
-									"cookie": [],
-									"body": ""
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer <token>",
+										"description": "Added as a part of security scheme: bearer"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": \"string\",\n  \"username\": \"string\",\n  \"name\": \"string\",\n  \"surname\": \"string\",\n  \"birthDate\": \"1974-01-15T15:06:02.807Z\",\n  \"email\": \"string\",\n  \"password\": \"string\",\n  \"creationDate\": \"1950-04-04T16:49:48.224Z\",\n  \"active\": false,\n  \"moneySpent\": 9864.80425110991,\n  \"publicationsNumber\": 9009,\n  \"role\": \"string\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/Users/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Users",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"message\": \"string\"\n}"
+						},
+						{
+							"name": "Internal Server Error",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer <token>",
+										"description": "Added as a part of security scheme: bearer"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": \"string\",\n  \"username\": \"string\",\n  \"name\": \"string\",\n  \"surname\": \"string\",\n  \"birthDate\": \"1974-01-15T15:06:02.807Z\",\n  \"email\": \"string\",\n  \"password\": \"string\",\n  \"creationDate\": \"1950-04-04T16:49:48.224Z\",\n  \"active\": false,\n  \"moneySpent\": 9864.80425110991,\n  \"publicationsNumber\": 9009,\n  \"role\": \"string\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/Users/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Users",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"message\": \"string\"\n}"
+						}
+					]
+				},
+				{
+					"name": "/api/Users/:id",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/Users/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"Users",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "string",
+									"description": "(Required) "
 								}
 							]
+						}
+					},
+					"response": [
+						{
+							"name": "No Content",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer <token>",
+										"description": "Added as a part of security scheme: bearer"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/Users/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Users",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "text",
+							"header": [],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Not Found",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer <token>",
+										"description": "Added as a part of security scheme: bearer"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/Users/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Users",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"message\": \"string\"\n}"
+						},
+						{
+							"name": "Internal Server Error",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer <token>",
+										"description": "Added as a part of security scheme: bearer"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/Users/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Users",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"message\": \"string\"\n}"
 						}
 					]
 				}
@@ -2304,10 +4746,32 @@
 			}
 		]
 	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
 	"variable": [
 		{
 			"key": "baseUrl",
-			"value": "/"
+			"value": "http:/localhost:5540"
 		}
 	]
 }
