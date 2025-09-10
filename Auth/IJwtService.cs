@@ -1,6 +1,5 @@
 using System.Security.Claims;
 using TotecoApi.Models;
-using TotecoApi.Models;
 
 namespace TotecoApi.Auth
 {
