@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using TotecoApi.Models;
 using TotecoApi.Services;
-using TotecoApi.Models;
 
 namespace TotecoApi.Controllers
 {

@@ -2,7 +2,6 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using TotecoApi.Models;
 using TotecoApi.Services;
-using TotecoApi.Models;
 
 namespace TotecoApi.Controllers
 {
