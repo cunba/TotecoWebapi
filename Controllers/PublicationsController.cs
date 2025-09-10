@@ -8,6 +8,8 @@ namespace TotecoApi.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
+    [Consumes("application/json")]
+    [Produces("application/json")]
     public class PublicationsController(
         IGenericService<Publication> servicePublication,
         IGenericService<Product> serviceProduct,

@@ -7,6 +7,8 @@ namespace TotecoApi.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
+    [Consumes("application/json")]
+    [Produces("application/json")]
     public class UsersController(IGenericService<User> service) : ControllerBase
     {
         private readonly IGenericService<User> _service = service;

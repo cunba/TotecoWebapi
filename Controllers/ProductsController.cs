@@ -8,6 +8,8 @@ namespace TotecoApi.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
+    [Consumes("application/json")]
+    [Produces("application/json")]
     public class ProductsController(IGenericService<Product> service) : ControllerBase
     {
         private readonly IGenericService<Product> _service = service;
