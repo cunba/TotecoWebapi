@@ -1,4 +1,4 @@
-namespace TotecoWebapi.Models
+namespace TotecoApi.Models
 {
     public class LoginRequest(string username, string password)
     {

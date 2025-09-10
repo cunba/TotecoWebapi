@@ -9,7 +9,7 @@ namespace TotecoApi.Models
     {
         [Key]
         [Column("id")]
-        public int Id { get; set; }
+        public string Id { get; set; }
 
         [Column("username")]
         public string Username { get; set; } = string.Empty;

@@ -19,4 +19,4 @@ COPY --from=build /app .
 # Puerto interno de la API
 EXPOSE 5540
 
-ENTRYPOINT ["dotnet", "TotecoWebapi.dll"]
+ENTRYPOINT ["dotnet", "TotecoApi.dll"]

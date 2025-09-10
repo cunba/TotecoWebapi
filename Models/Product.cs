@@ -9,7 +9,7 @@ namespace TotecoApi.Models
     {
         [Key]
         [Column("id")]
-        public int Id { get; set; }
+        public string Id { get; set; }
 
         [Column("name")]
         public string Name { get; set; } = string.Empty;
@@ -24,7 +24,7 @@ namespace TotecoApi.Models
         public double Score { get; set; }
 
         [Column("publication_id")]
-        public int? PublicationId { get; set; }
+        public string? PublicationId { get; set; }
 
         [JsonIgnore]
         public Publication? Publication { get; set; }

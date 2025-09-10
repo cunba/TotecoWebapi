@@ -14,14 +14,14 @@ public class GenericService<T> : IGenericService<T> where T : class
 
     public async Task<List<T>> GetAllAsync() => await _repository.GetAllAsync();
 
-    public async Task<T?> GetByIdAsync(int id) => await _repository.GetByIdAsync(id);
+    public async Task<T?> GetByIdAsync(string id) => await _repository.GetByIdAsync(id);
 
     public async Task<T> CreateAsync(T entity)
     {
         await _repository.AddAsync(entity);
         return entity;
     }
-    public async Task<T?> UpdateAsync(int id, T entity)
+    public async Task<T?> UpdateAsync(string id, T entity)
     {
         var existing = await _repository.GetByIdAsync(id);
         if (existing == null)
@@ -30,7 +30,7 @@ public class GenericService<T> : IGenericService<T> where T : class
         return entity;
     }
 
-    public async Task<bool> DeleteAsync(int id)
+    public async Task<bool> DeleteAsync(string id)
     {
         var existing = await _repository.GetByIdAsync(id);
         if (existing == null)

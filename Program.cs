@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using TotecoApi.Repositories;
 using TotecoApi.Models;
 using TotecoApi.Services;
-using TotecoWebapi.Auth;
+using TotecoApi.Auth;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;

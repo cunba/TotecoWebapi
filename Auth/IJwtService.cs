@@ -1,8 +1,8 @@
 using System.Security.Claims;
 using TotecoApi.Models;
-using TotecoWebapi.Models;
+using TotecoApi.Models;
 
-namespace TotecoWebapi.Auth
+namespace TotecoApi.Auth
 {
     public interface IJwtService
     {

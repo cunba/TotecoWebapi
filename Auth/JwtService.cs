@@ -3,9 +3,9 @@ using System.Security.Claims;
 using System.Text;
 using Microsoft.IdentityModel.Tokens;
 using TotecoApi.Models;
-using TotecoWebapi.Models;
+using TotecoApi.Models;
 
-namespace TotecoWebapi.Auth
+namespace TotecoApi.Auth
 {
     public class JwtService : IJwtService
     {

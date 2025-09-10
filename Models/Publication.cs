@@ -9,7 +9,7 @@ namespace TotecoApi.Models
     {
         [Key]
         [Column("id")]
-        public int Id { get; set; }
+        public string Id { get; set; }
 
         [Column("date")]
         public DateTime Date { get; set; }
@@ -24,13 +24,12 @@ namespace TotecoApi.Models
         public string? Photo { get; set; }
 
         [Column("user_id")]
-        public int UserId { get; set; }
-
+        public string UserId { get; set; }
         [JsonIgnore]
         public User? User { get; set; }
 
         [Column("establishment_id")]
-        public int EstablishmentId { get; set; }
+        public string EstablishmentId { get; set; }
         public Establishment? Establishment { get; set; }
 
         public List<Product> Products { get; set; } = new();

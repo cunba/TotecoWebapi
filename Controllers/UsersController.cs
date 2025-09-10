@@ -13,49 +13,98 @@ namespace TotecoApi.Controllers
 
         [HttpGet]
         [Authorize(Roles = "ADMIN")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(List<User>))]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(ErrorResponse))]
         public async Task<ActionResult<List<User>>> GetAll()
         {
-            var user = await _service.GetAllAsync();
-            return Ok(user);
+            try
+            {
+                var user = await _service.GetAllAsync();
+                return Ok(user);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new ErrorResponse(ex.Message));
+            }
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<User>> GetById(int id)
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(User))]
+        [ProducesResponseType(StatusCodes.Status404NotFound, Type = typeof(ErrorResponse))]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(ErrorResponse))]
+        public async Task<ActionResult<User>> GetById(string id)
         {
-            var user = await _service.GetByIdAsync(id);
-            if (user == null) return NotFound();
-            return Ok(user);
+            try
+            {
+                var user = await _service.GetByIdAsync(id);
+                if (user == null) return NotFound(new ErrorResponse("Usuario no encontrado."));
+                return Ok(user);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new ErrorResponse(ex.Message));
+            }
         }
 
         [HttpPost]
+        [ProducesResponseType(StatusCodes.Status201Created, Type = typeof(User))]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(ErrorResponse))]
         public async Task<ActionResult<User>> Create(User user)
         {
-            await _service.CreateAsync(user);
-            return CreatedAtAction(nameof(GetById), new { id = user.Id }, user);
+            try
+            {
+                await _service.CreateAsync(user);
+                return CreatedAtAction(nameof(GetById), new { id = user.Id }, user);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new ErrorResponse(ex.Message));
+            }
         }
 
         [HttpPut("{id}")]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(ErrorResponse))]
+        [ProducesResponseType(StatusCodes.Status404NotFound, Type = typeof(ErrorResponse))]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(ErrorResponse))]
         [Authorize]
-        public async Task<IActionResult> Update(int id, User user)
+        public async Task<IActionResult> Update(string id, User user)
         {
-            if (id != user.Id) return BadRequest();
+            try
+            {
+                if (id != user.Id) return BadRequest(new ErrorResponse("El Id no coincide con el Id del usuario."));
 
-            var exist = await _service.GetByIdAsync(id);
-            if (exist == null) return NotFound();
+                var exist = await _service.GetByIdAsync(id);
+                if (exist == null) return NotFound(new ErrorResponse("Usuario no encontrado."));
 
-            await _service.UpdateAsync(id, user);
-            return NoContent();
+                await _service.UpdateAsync(id, user);
+                return NoContent();
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new ErrorResponse(ex.Message));
+            }
         }
 
         [HttpDelete("{id}")]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status404NotFound, Type = typeof(ErrorResponse))]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(ErrorResponse))]
         [Authorize]
-        public async Task<IActionResult> Delete(int id)
+        public async Task<IActionResult> Delete(string id)
         {
-            var exist = await _service.GetByIdAsync(id);
-            if (exist == null) return NotFound();
+            try
+            {
+                var exist = await _service.GetByIdAsync(id);
+                if (exist == null) return NotFound(new ErrorResponse("Usuario no encontrado."));
 
-            await _service.DeleteAsync(id);
-            return NoContent();
+                await _service.DeleteAsync(id);
+                return NoContent();
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new ErrorResponse(ex.Message));
+            }
         }
     }
 }
