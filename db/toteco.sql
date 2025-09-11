@@ -248,7 +248,7 @@ CREATE TABLE `Publications` (
   `date` date NOT NULL,
   `total_price` float NOT NULL,
   `total_score` float NOT NULL,
-  `photo` varchar(50) NOT NULL,
+  `photo` varchar(200) NOT NULL,
   `user_id` varchar(36) NOT NULL,
   `establishment_id` varchar(36) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
