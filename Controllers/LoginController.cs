@@ -25,7 +25,7 @@ namespace TotecoApi.Controllers
                 if (user.Count == 0) return Unauthorized();
 
                 var token = _jwtService.GenerateToken(user.First());
-                return Ok(new LoginResponse(token));
+                return Ok(new LoginResponse(token, user[0]));
             }
             catch (Exception ex)
             {
